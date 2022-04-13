@@ -35,6 +35,33 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""bcd6878f-ad6f-4e3e-ade0-d44f75b52ea0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""chspell"",
+                    ""type"": ""Button"",
+                    ""id"": ""d556cb97-8a71-49bd-bab6-eb78444d4931"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""dcbdc2ad-d1f5-4449-9bff-53044f6a2f0b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -147,6 +174,39 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44289583-daf1-4845-bcf6-fda588aac54d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eeb7b2b1-e5d5-4ed6-80ad-81afa8cef321"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""chspell"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f334d117-5ea7-47c6-92e3-ac54d1e88437"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -156,6 +216,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // live controls
         m_livecontrols = asset.FindActionMap("live controls", throwIfNotFound: true);
         m_livecontrols_Move = m_livecontrols.FindAction("Move", throwIfNotFound: true);
+        m_livecontrols_attack = m_livecontrols.FindAction("attack", throwIfNotFound: true);
+        m_livecontrols_chspell = m_livecontrols.FindAction("chspell", throwIfNotFound: true);
+        m_livecontrols_Look = m_livecontrols.FindAction("Look", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -216,11 +279,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_livecontrols;
     private ILivecontrolsActions m_LivecontrolsActionsCallbackInterface;
     private readonly InputAction m_livecontrols_Move;
+    private readonly InputAction m_livecontrols_attack;
+    private readonly InputAction m_livecontrols_chspell;
+    private readonly InputAction m_livecontrols_Look;
     public struct LivecontrolsActions
     {
         private @PlayerControls m_Wrapper;
         public LivecontrolsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_livecontrols_Move;
+        public InputAction @attack => m_Wrapper.m_livecontrols_attack;
+        public InputAction @chspell => m_Wrapper.m_livecontrols_chspell;
+        public InputAction @Look => m_Wrapper.m_livecontrols_Look;
         public InputActionMap Get() { return m_Wrapper.m_livecontrols; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -233,6 +302,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_LivecontrolsActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_LivecontrolsActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_LivecontrolsActionsCallbackInterface.OnMove;
+                @attack.started -= m_Wrapper.m_LivecontrolsActionsCallbackInterface.OnAttack;
+                @attack.performed -= m_Wrapper.m_LivecontrolsActionsCallbackInterface.OnAttack;
+                @attack.canceled -= m_Wrapper.m_LivecontrolsActionsCallbackInterface.OnAttack;
+                @chspell.started -= m_Wrapper.m_LivecontrolsActionsCallbackInterface.OnChspell;
+                @chspell.performed -= m_Wrapper.m_LivecontrolsActionsCallbackInterface.OnChspell;
+                @chspell.canceled -= m_Wrapper.m_LivecontrolsActionsCallbackInterface.OnChspell;
+                @Look.started -= m_Wrapper.m_LivecontrolsActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_LivecontrolsActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_LivecontrolsActionsCallbackInterface.OnLook;
             }
             m_Wrapper.m_LivecontrolsActionsCallbackInterface = instance;
             if (instance != null)
@@ -240,6 +318,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @attack.started += instance.OnAttack;
+                @attack.performed += instance.OnAttack;
+                @attack.canceled += instance.OnAttack;
+                @chspell.started += instance.OnChspell;
+                @chspell.performed += instance.OnChspell;
+                @chspell.canceled += instance.OnChspell;
+                @Look.started += instance.OnLook;
+                @Look.performed += instance.OnLook;
+                @Look.canceled += instance.OnLook;
             }
         }
     }
@@ -247,5 +334,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     public interface ILivecontrolsActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
+        void OnChspell(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
     }
 }
