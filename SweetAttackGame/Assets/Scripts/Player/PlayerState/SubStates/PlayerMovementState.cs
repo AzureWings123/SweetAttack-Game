@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerIdleState : PlayerNormalState
+public class PlayerMovementState : PlayerNormalState
 {
-    public PlayerIdleState(Player player, PlayerStateMachine stateMachine): base(player, stateMachine){}
-    // Start is called before the first frame update
+    public PlayerMovementState (Player player, PlayerStateMachine stateMachine): base(player, stateMachine){}
     
+    // Start is called before the first frame update
     public override void DoChecks()
     {
         base.DoChecks();
@@ -14,7 +14,7 @@ public class PlayerIdleState : PlayerNormalState
 
     public override void Enter()
     {
-        Debug.Log("test state active");
+        Debug.Log("move state active");
         base.Enter();
     }
 
@@ -27,9 +27,9 @@ public class PlayerIdleState : PlayerNormalState
     {
         base.LogicUpdate();
 
-        if (moveInput != Vector2.zero)
+        if (moveInput == Vector2.zero)
         {
-            stateMachine.ChangeState(player.moveState);    
+            stateMachine.ChangeState(player.idleState);
         }
     }
 

@@ -6,6 +6,10 @@ public class PlayerNormalState : PlayerState
 {
     public PlayerNormalState(Player player, PlayerStateMachine stateMachine)
                             :base(player, stateMachine){}
+    
+    protected Vector2 moveInput;
+
+
     public override void DoChecks()
     {
         base.DoChecks();
@@ -26,6 +30,9 @@ public class PlayerNormalState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        //Initialize connections between handler and player
+        moveInput = player.controllerHandler.MovementInput; 
     }
 
     public override void PhysicsUpdate()

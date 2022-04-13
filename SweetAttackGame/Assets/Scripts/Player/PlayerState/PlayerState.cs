@@ -14,7 +14,8 @@ public class PlayerState
 {
     protected Player player;
     protected PlayerStateMachine stateMachine;
-
+    protected PlayerMovement playerMovement;
+    
     public PlayerState(Player player, PlayerStateMachine stateMachine)
     {
         this.player = player;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -9,27 +10,35 @@ public class Player : MonoBehaviour
     //Regions are used to keep the code clean
     public PlayerStateMachine stateMachine {get; private set;}
     public Rigidbody2D rb { get; private set; }
-
+    public PlayerControllerHandler controllerHandler{ get; private set;}
+    
     //Basic scripts needed for actions
     #region Dependency Scripts
+    [SerializeField] public PlayerMovement playerMovement;
 
 
     #endregion
+    
+    #region States
     //All Substates needed
     public PlayerIdleState idleState{get; private set;}
-    #region States
-
+    public PlayerMovementState moveState{get; private set;}
     #endregion
+
+    public float moveSpeed = 7f;
 
     private void Awake()
     {
         stateMachine = new PlayerStateMachine();
         idleState = new PlayerIdleState(this, stateMachine);
+        moveState = new PlayerMovementState(this,stateMachine);
     }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        controllerHandler = GetComponent<PlayerControllerHandler>();
+        stateMachine.Initalize(idleState);
     }
 
     private void Update() {

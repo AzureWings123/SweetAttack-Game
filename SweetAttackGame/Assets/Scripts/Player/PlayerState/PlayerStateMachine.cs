@@ -11,4 +11,12 @@ public class PlayerStateMachine
         currentState = startingState;
         currentState.Enter();
     }
+
+    public void ChangeState(PlayerState newState)
+    {
+        currentState.Exit();
+        currentState = newState;
+        currentState.Enter();
+    }
+
 }
