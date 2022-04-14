@@ -8,7 +8,10 @@ public class PlayerNormalState : PlayerState
                             :base(player, stateMachine){}
     
     protected Vector2 moveInput;
+    protected Vector2 lookInput;
 
+    protected bool attackInput;
+    protected bool changeSpell;
 
     public override void DoChecks()
     {
@@ -32,7 +35,10 @@ public class PlayerNormalState : PlayerState
         base.LogicUpdate();
 
         //Initialize connections between handler and player
+        attackInput = player.controllerHandler.attackInput;
+        changeSpell = player.controllerHandler.chSpellInput;
         moveInput = player.controllerHandler.MovementInput; 
+        lookInput = player.controllerHandler.LookInput;
     }
 
     public override void PhysicsUpdate()

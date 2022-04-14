@@ -26,6 +26,18 @@ public class PlayerMovementState : PlayerNormalState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        
+        if (attackInput)
+        {
+            player.controllerHandler.externalStopAttackInput();
+            player.spell.castSpell();
+        }
+
+        if (changeSpell)
+        {
+            player.controllerHandler.externalStopChSpellInput();
+            player.spell.changeSpell();
+        }  
 
         if (moveInput == Vector2.zero)
         {
@@ -38,5 +50,6 @@ public class PlayerMovementState : PlayerNormalState
         base.PhysicsUpdate();
 
         player.playerMovement.movement(moveInput);
+        player.playerMovement.look(lookInput);
     }
 }

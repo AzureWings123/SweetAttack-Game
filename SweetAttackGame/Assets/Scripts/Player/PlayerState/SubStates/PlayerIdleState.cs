@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerNormalState
 {
-    public PlayerIdleState(Player player, PlayerStateMachine stateMachine): base(player, stateMachine){}
+    public PlayerIdleState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine) { }
     // Start is called before the first frame update
-    
+
     public override void DoChecks()
     {
         base.DoChecks();
@@ -27,9 +27,23 @@ public class PlayerIdleState : PlayerNormalState
     {
         base.LogicUpdate();
 
+        if (attackInput)
+        {
+            player.controllerHandler.externalStopAttackInput();
+            player.spell.castSpell();
+        }
+
+        if (changeSpell)
+        {
+            player.controllerHandler.externalStopChSpellInput();
+            player.spell.changeSpell();
+        }
+
+
+
         if (moveInput != Vector2.zero)
         {
-            stateMachine.ChangeState(player.moveState);    
+            stateMachine.ChangeState(player.moveState);
         }
     }
 
@@ -37,6 +51,7 @@ public class PlayerIdleState : PlayerNormalState
     {
         base.PhysicsUpdate();
 
+        player.playerMovement.look(lookInput);
         player.playerMovement.movement(moveInput);
     }
 }

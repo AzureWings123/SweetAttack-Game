@@ -15,42 +15,43 @@ public class PlayerControllerHandler : MonoBehaviour
     private InputAction move; //Basic Left-Right-Up-Down movement
     private InputAction look; //Basic Mouse Position
 
-    public Vector2 MovementInput {get; private set;} //Passes movement vector while not letting other functions change it
-    public Vector2 LookInput {get; private set;} //Player mouse rotation
+    public Vector2 MovementInput { get; private set; } //Passes movement vector while not letting other functions change it
+    public Vector2 LookInput { get; private set; } //Player mouse rotation
 
     //Bool signals
-    public bool attackInput {get; private set;}
-    public bool chSpellInput {get; private set;}
+    public bool attackInput { get; private set; }
+    public bool chSpellInput { get; private set; }
 
-    private void Awake() 
+    private void Awake()
     {
         //Initalize controller and associated
         //Controls
         playerControls = new PlayerControls();
 
         look = playerControls.livecontrols.Look;
-        move = playerControls.livecontrols.Move;    
+        move = playerControls.livecontrols.Move;
     }
 
     //Subscribe all movements here
-    private void OnEnable() 
+    private void OnEnable()
     {
         //Turn on Boolean
         playerControls.livecontrols.attack.started += doAttackInput;
         playerControls.livecontrols.chspell.started += doChSpellInput; //Change Spell Input
         //Turn off Boolean
         playerControls.livecontrols.attack.canceled += stopAttackInput;
-        playerControls.livecontrols.chspell.canceled += stopChSpellInput; 
+        playerControls.livecontrols.chspell.canceled += stopChSpellInput;
         playerControls.Enable();
     }
 
     //Unsubscribe all movement
-    private void OnDisable() {
+    private void OnDisable()
+    {
         playerControls.livecontrols.attack.started += doAttackInput;
         playerControls.livecontrols.chspell.started += doChSpellInput; //Change Spell Input
 
         playerControls.livecontrols.attack.canceled -= stopAttackInput;
-        playerControls.livecontrols.chspell.canceled -= stopChSpellInput; 
+        playerControls.livecontrols.chspell.canceled -= stopChSpellInput;
 
         playerControls.Disable();
     }
@@ -70,4 +71,8 @@ public class PlayerControllerHandler : MonoBehaviour
     //Here we send a false message to the caller.
     private void stopAttackInput(InputAction.CallbackContext context) => attackInput = false;
     private void stopChSpellInput(InputAction.CallbackContext context) => chSpellInput = false;
+
+    //These are public stop fucntions which make is so that the button cannot be held down
+    public void externalStopAttackInput() => attackInput = false;
+    public void externalStopChSpellInput() => chSpellInput = false;
 }
