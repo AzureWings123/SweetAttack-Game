@@ -22,4 +22,9 @@ public class GameOEvents : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+
+     public void StartCredits() 
+    {
+        SceneManager.LoadScene("CreditScene");
+    }
 }
