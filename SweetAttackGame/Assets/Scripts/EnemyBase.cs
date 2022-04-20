@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
-    [SerializeField] private string enemyName;
+    [SerializeField] public string enemyName;
     [SerializeField] private float moveSpeed;
-    private float healthPoints;
-    [SerializeField] private float maxHealthPoints;
-
     private Transform target; // Enemy target = player
     private SpriteRenderer sp;
+    Rigidbody2D rb;
     void Start()
     {
-        healthPoints = maxHealthPoints;
         sp = GetComponent<SpriteRenderer>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
@@ -24,10 +21,6 @@ public class EnemyBase : MonoBehaviour
         Move();
         facePlayer();
         Attack();
-        if(healthPoints <= 0)
-        {
-            Death();
-        }
     }
 
     protected virtual void Move()
@@ -51,4 +44,13 @@ public class EnemyBase : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            other.GetComponent<Health>().TakeDamage(5);
+            Debug.Log(other.GetComponent<Health>().currentHealth);
+        }
+    }
+
 }

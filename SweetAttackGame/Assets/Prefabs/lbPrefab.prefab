@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3017591075272123991}
   m_Layer: 0
   m_Name: lbPrefab
-  m_TagString: Untagged
+  m_TagString: IceMagic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

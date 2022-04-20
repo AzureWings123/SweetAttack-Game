@@ -6,6 +6,10 @@ TagManager:
   tags:
   - EnemyMagic
   - Enemy
+  - Fire
+  - Ice
+  - IceMagic
+  - FireMagic
   layers:
   - Default
   - TransparentFX

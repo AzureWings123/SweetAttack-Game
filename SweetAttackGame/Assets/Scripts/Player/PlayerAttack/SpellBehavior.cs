@@ -12,5 +12,14 @@ public class SpellBehavior : MonoBehaviour
    private void OnCollisionEnter2D(Collision2D other) 
    {
        Destroy(gameObject);
-   } 
+   }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Enemy")
+        {
+            collision.GetComponent<Health>().TakeDamage(10);
+            Debug.Log(collision.GetComponent<EnemyBase>().enemyName + ": " + collision.GetComponent<Health>().currentHealth);
+            Destroy(gameObject);
+        }
+    }
 }
