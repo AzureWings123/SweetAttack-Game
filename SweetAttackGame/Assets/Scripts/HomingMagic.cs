@@ -30,7 +30,9 @@ public class HomingMagic : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            other.GetComponent<Health>().TakeDamage(10);
             Destroy(gameObject);
+            Debug.Log("PlayerHealth: "+ other.GetComponent<Health>().currentHealth);
         }
     }
 }

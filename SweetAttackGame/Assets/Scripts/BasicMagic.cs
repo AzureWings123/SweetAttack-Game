@@ -30,23 +30,15 @@ public class BasicMagic : MonoBehaviour
         }
 
     }
-    /*
-    private void Update()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, shootSpeed * Time.deltaTime);
-
-        lifeBtwTimer += Time.deltaTime;
-        if (lifeBtwTimer >= maxLife)
-        {
-            Destroy(gameObject);
-        }
-    } */
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
+            other.GetComponent<Health>().TakeDamage(10);
             Destroy(gameObject);
+            Debug.Log("PlayerHealth: "+ other.GetComponent<Health>().currentHealth);
         }
     }
 }

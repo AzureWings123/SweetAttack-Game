@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     public PlayerControllerHandler controllerHandler { get; private set; }
     public Camera cam;
+    private int playerHealth;
+    private int playerMaxHealth;
     //Basic scripts needed for actions
     #region Dependency Scripts
     [SerializeField] public PlayerMovement playerMovement;
@@ -50,4 +52,5 @@ public class Player : MonoBehaviour
     {
         stateMachine.currentState.PhysicsUpdate();
     }
+    
 }
