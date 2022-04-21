@@ -7,15 +7,10 @@ public class BasicMagic : MonoBehaviour
     private Transform target;
     Vector2 moveDirection;
     [SerializeField] private float shootSpeed;
-    [SerializeField] private float maxLife = 2.0f;
+    [SerializeField] private float maxLife = 8.0f;
     private float lifeBtwTimer;
     Rigidbody2D rb;
-    /*
-    private void Awake()
-    {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        targetPosition = target.position;
-    }*/
+    
 
     private void Start()
     {
@@ -23,14 +18,16 @@ public class BasicMagic : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         moveDirection = (target.transform.position - transform.position).normalized * shootSpeed;
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
+    }
+    private void Update()
+    {
         lifeBtwTimer += Time.deltaTime;
         if (lifeBtwTimer >= maxLife)
         {
             Destroy(gameObject);
         }
-
     }
-    
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {

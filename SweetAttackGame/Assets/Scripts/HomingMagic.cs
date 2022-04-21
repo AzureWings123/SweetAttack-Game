@@ -7,7 +7,7 @@ public class HomingMagic : MonoBehaviour
     private Transform target;
     [SerializeField] private float shootSpeed;
 
-    [SerializeField] private float maxLife = 2.0f;
+    [SerializeField] private float maxLife = 4.0f;
     private float lifeBtwTimer;
 
     private void Awake()
