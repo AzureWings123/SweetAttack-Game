@@ -5,22 +5,25 @@ using UnityEngine;
 public class Spell : MonoBehaviour
 {
     //List of spells that the player is able to switch between. 
-    private enum Spells
+    //Will change name of lightning later
+    public enum Spells
     {
-        FIREBALL, LIGHTNING_BOLT
+        FIREBALL, LIGHTNING_BOLT, LIGHTNING
     }
 
     [SerializeField] Player player;
 
-    private Spells currSpell;
+    protected Spells currSpell;
+    private Vector2 rayBoxSize;
     public Transform firePoint;
-
+    private Vector2 lookPos = Vector2.zero;
     //Prefabs
     public GameObject fireballPrefab;
     public GameObject lbPrefab;
-
+    
 
     public float spellForce = 10f;
+    public int manaCost = 5;
 
     private void Start()
     {
@@ -33,15 +36,18 @@ public class Spell : MonoBehaviour
     {
         if (currSpell == Spells.FIREBALL)
         {
-            
             currSpell = Spells.LIGHTNING_BOLT;
         }
         else if (currSpell == Spells.LIGHTNING_BOLT)
         {
-            currSpell = Spells.FIREBALL;   
+            currSpell = Spells.LIGHTNING;
         }
-        
-        print("Changed Spell to "+ currSpell);
+        else if (currSpell == Spells.LIGHTNING)
+        {
+            currSpell = Spells.FIREBALL;
+        }
+
+        print("Changed Spell to " + currSpell);
     }
 
     //Searches which state it is currently in and depending on that state will return the needed prefab for that state
@@ -56,7 +62,10 @@ public class Spell : MonoBehaviour
             case Spells.LIGHTNING_BOLT:
                 spellForce = 25f;
                 return lbPrefab;
-
+            case Spells.LIGHTNING:
+                //This spell works differently from 
+                spellForce = 0f;
+                return lbPrefab;
             default:
                 print("error occured. Huh?");
                 return fireballPrefab;
@@ -66,8 +75,37 @@ public class Spell : MonoBehaviour
     //Create GameObject and send it out with correct amount of force needed.
     public void castSpell()
     {
-        GameObject spell = Instantiate(selectSpell(), firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * spellForce, ForceMode2D.Impulse);
+        //Make it so it differentiate between hitscan and projectile spells
+        //Hitscan spell
+        if (currSpell == Spells.LIGHTNING)
+        {
+            
+            rayBoxSize.x = 4f;
+            rayBoxSize.y = Mathf.Sqrt(Mathf.Pow(lookPos.x - firePoint.position.x, 2) + Mathf.Pow(lookPos.y - firePoint.position.y, 2));
+            //Make a boxcast that is at a fixed width and a length of origin            
+            RaycastHit2D box = Physics2D.BoxCast(firePoint.position, rayBoxSize, 0f, Vector2.up);
+            Debug.DrawRay(firePoint.position + new Vector3( rayBoxSize.x, 0), Vector2.up * (rayBoxSize.y), Color.blue);
+        }
+        //Projectile spells
+        else
+        {
+            GameObject spell = Instantiate(selectSpell(), firePoint.position, firePoint.rotation);
+            Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
+            rb.AddForce(firePoint.up * spellForce, ForceMode2D.Impulse);
+        }
+    }
+
+    public Spells returnSpell()
+    {
+        return currSpell;
+    }
+
+    private void Update()
+    {
+        //Only does calculation while spell is out in order to save on resources
+        if(currSpell == Spells.LIGHTNING)
+        {
+            lookPos = player.cam.ScreenToWorldPoint(player.controllerHandler.LookInput);
+        }
     }
 }

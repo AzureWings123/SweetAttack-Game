@@ -8,7 +8,7 @@ public class PlayerNormalState : PlayerState
                             :base(player, stateMachine){}
     
     protected Vector2 moveInput;
-    protected Vector2 lookInput;
+    public Vector2 lookInput{get; private set;}
 
     protected bool attackInput;
     protected bool changeSpell;

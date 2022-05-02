@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] Player player;
-
+    
     public void movement(Vector2 movementDirection)
     {
         //Moves object
