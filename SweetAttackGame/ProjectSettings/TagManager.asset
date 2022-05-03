@@ -6,17 +6,21 @@ TagManager:
   tags:
   - EnemyMagic
   - Enemy
+  - Fire
+  - Ice
+  - IceMagic
+  - FireMagic
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - test
   - Water
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Enemies
   - 
   - 
   - 
@@ -42,4 +46,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Test
+    uniqueID: 2178053585
+    locked: 0
+  - name: Player
+    uniqueID: 4115226427
+    locked: 0
+  - name: Foreground Objects
+    uniqueID: 4048768471
+    locked: 0
+  - name: Background Objects
+    uniqueID: 2516836543
     locked: 0

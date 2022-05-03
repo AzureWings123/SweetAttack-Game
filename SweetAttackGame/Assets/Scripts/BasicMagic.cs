@@ -5,22 +5,22 @@ using UnityEngine;
 public class BasicMagic : MonoBehaviour
 {
     private Transform target;
-    private Vector3 targetPosition;
+    Vector2 moveDirection;
     [SerializeField] private float shootSpeed;
-
-    [SerializeField] private float maxLife = 2.0f;
+    [SerializeField] private float maxLife = 8.0f;
     private float lifeBtwTimer;
+    Rigidbody2D rb;
+    
 
-    private void Awake()
+    private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        targetPosition = target.position;
+        moveDirection = (target.transform.position - transform.position).normalized * shootSpeed;
+        rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
     }
-
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, shootSpeed * Time.deltaTime);
-
         lifeBtwTimer += Time.deltaTime;
         if (lifeBtwTimer >= maxLife)
         {
@@ -28,11 +28,14 @@ public class BasicMagic : MonoBehaviour
         }
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
+            other.GetComponent<Health>().TakeDamage(10);
             Destroy(gameObject);
+            Debug.Log("PlayerHealth: "+ other.GetComponent<Health>().currentHealth);
         }
     }
 }
