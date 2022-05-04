@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        //Intialize the state machine and all the needed states
         stateMachine = new PlayerStateMachine();
         idleState = new PlayerIdleState(this, stateMachine);
         moveState = new PlayerMovementState(this, stateMachine);
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        //Grab dependent pieces
         rb = GetComponent<Rigidbody2D>();
         controllerHandler = GetComponent<PlayerControllerHandler>();
         stateMachine.Initalize(idleState);
