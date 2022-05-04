@@ -17,7 +17,15 @@ public class SpellBehavior : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
-            collision.GetComponent<Health>().TakeDamage(10);
+            if(gameObject.tag == "IceMagic")
+            {
+                collision.GetComponent<Health>().TakeDamage(10);
+            }
+            else if(gameObject.tag == "FireMagic")
+            {
+                collision.GetComponent<Health>().TakeDamage(20);
+            }
+            
             Debug.Log(collision.GetComponent<EnemyBase>().enemyName + ": " + collision.GetComponent<Health>().currentHealth);
             Destroy(gameObject);
         }
