@@ -15,21 +15,23 @@ public class PlayerState
     protected Player player;
     protected PlayerStateMachine stateMachine;
     protected PlayerMovement playerMovement;
-    
-    public PlayerState(Player player, PlayerStateMachine stateMachine)
+    protected string animBoolName;
+
+    public PlayerState(Player player, PlayerStateMachine stateMachine, string animBoolName)
     {
         this.player = player;
         this.stateMachine = stateMachine;
-
+        this.animBoolName = animBoolName;
     }
 
     public virtual void Enter()
     {
         DoChecks();
+        player.animator.SetBool(animBoolName, true);
     }
     public virtual void Exit()
     {
-
+        player.animator.SetBool(animBoolName, false);
     }
 
     public virtual void LogicUpdate()

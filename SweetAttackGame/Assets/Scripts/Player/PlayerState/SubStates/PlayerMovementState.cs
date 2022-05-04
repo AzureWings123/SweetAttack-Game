@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovementState : PlayerNormalState
 {
-    public PlayerMovementState (Player player, PlayerStateMachine stateMachine): base(player, stateMachine){}
+    public PlayerMovementState (Player player, PlayerStateMachine stateMachine, string animBoolName): base(player, stateMachine, animBoolName){}
     
     // Start is called before the first frame update
     public override void DoChecks()

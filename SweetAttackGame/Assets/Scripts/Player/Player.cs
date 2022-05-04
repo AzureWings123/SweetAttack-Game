@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public PlayerStateMachine stateMachine { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public PlayerControllerHandler controllerHandler { get; private set; }
+    public Animator animator;
     public Camera cam;
     private int playerHealth;
     private int playerMaxHealth;
@@ -33,8 +34,8 @@ public class Player : MonoBehaviour
     {
         //Intialize the state machine and all the needed states
         stateMachine = new PlayerStateMachine();
-        idleState = new PlayerIdleState(this, stateMachine);
-        moveState = new PlayerMovementState(this, stateMachine);
+        idleState = new PlayerIdleState(this, stateMachine, "idle");
+        moveState = new PlayerMovementState(this, stateMachine, "moving");
     }
 
     private void Start()
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
         //Grab dependent pieces
         rb = GetComponent<Rigidbody2D>();
         controllerHandler = GetComponent<PlayerControllerHandler>();
+        animator = GetComponent<Animator>();
         stateMachine.Initalize(idleState);
     }
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerNormalState : PlayerState
 {
-    public PlayerNormalState(Player player, PlayerStateMachine stateMachine)
-                            :base(player, stateMachine){}
+    public PlayerNormalState(Player player, PlayerStateMachine stateMachine, string animBoolName)
+                            :base(player, stateMachine, animBoolName){}
     
     protected Vector2 moveInput;
     public Vector2 lookInput{get; private set;}

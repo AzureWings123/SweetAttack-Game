@@ -786,7 +786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1874211771
 Transform:
   m_ObjectHideFlags: 0
@@ -945,7 +945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958266217}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.863, y: -0, z: 0}
+  m_LocalPosition: {x: 1.25, y: -0, z: 0}
   m_LocalScale: {x: 4.9726486, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1874211771}
@@ -962,13 +962,14 @@ GameObject:
   - component: {fileID: 2137310811}
   - component: {fileID: 2137310810}
   - component: {fileID: 2137310813}
-  - component: {fileID: 2137310812}
   - component: {fileID: 2137310814}
   - component: {fileID: 2137310815}
   - component: {fileID: 2137310816}
   - component: {fileID: 2137310817}
   - component: {fileID: 2137310818}
+  - component: {fileID: 2137310812}
   - component: {fileID: 2137310819}
+  - component: {fileID: 2137310820}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1016,8 +1017,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.37664732, g: 0.8584906, b: 0.3523051, a: 1}
+  m_Sprite: {fileID: 1475729870150785549, guid: 67885bf482eea6041bd9439b80727cf3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1042,8 +1043,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &2137310812
-CircleCollider2D:
+--- !u!70 &2137310812
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1056,8 +1057,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1.75}
+  m_Direction: 0
 --- !u!50 &2137310813
 Rigidbody2D:
   serializedVersion: 4
@@ -1125,6 +1126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab28ad2da77b94a4fbeeb94fe2922fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   cam: {fileID: 519420031}
   playerMovement: {fileID: 2137310816}
   spell: {fileID: 2137310818}
@@ -1172,6 +1174,7 @@ MonoBehaviour:
   fireballPrefab: {fileID: 5849544196662882314, guid: f141d47b122dfed42b96124c64c23e73, type: 3}
   lbPrefab: {fileID: 1276751371296491574, guid: 42e8f38ac17169a408b46add86a5439a, type: 3}
   spellForce: 10
+  manaCost: 5
 --- !u!114 &2137310819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1185,3 +1188,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+--- !u!95 &2137310820
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137310809}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: baa828848ca6abb45b6b3d009c0ad582, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

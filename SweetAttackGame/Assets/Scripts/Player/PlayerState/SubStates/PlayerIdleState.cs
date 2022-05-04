@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerNormalState
 {
-    public PlayerIdleState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine) { }
+    public PlayerIdleState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName) { }
     // Start is called before the first frame update
 
     public override void DoChecks()
