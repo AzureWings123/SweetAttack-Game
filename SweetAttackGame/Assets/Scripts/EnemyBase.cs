@@ -48,8 +48,8 @@ public class EnemyBase : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Health>().TakeDamage(5);
-            Debug.Log(other.GetComponent<Health>().currentHealth);
+            other.GetComponent<Health>().TakeDamage(4);
+            Debug.Log("PlayerHealth: " + other.GetComponent<Health>().currentHealth);
         }
     }
 

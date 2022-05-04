@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
-        if(currentHealth > 0)
+        if (currentHealth > 0)
         {
             //hurt
         }
@@ -23,5 +23,5 @@ public class Health : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
 }
