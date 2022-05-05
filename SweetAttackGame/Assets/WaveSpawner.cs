@@ -37,11 +37,21 @@ public class WaveSpawner : MonoBehaviour
     }
     void SpawnWave()
     {
+        int startingNumEnemies = currentWave.numOfEnemies;
         if (canSpawn && nextSpawnTime < Time.time)
         {
-            GameObject randomEnemy = currentWave.enemyTypes[Random.Range(0, currentWave.enemyTypes.Length)];
+            GameObject randomEnemy = currentWave.enemyTypes[Random.Range(0, currentWave.enemyTypes.Length)]; //choose 
             Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
             Instantiate(randomEnemy, randomPoint.position, Quaternion.identity);
+            if (currentWave.enemyTypes.Length > 1 && currentWave.numOfEnemies < startingNumEnemies) // so you don't face off against too many of the same enemy in multitype waves
+            {
+                GameObject lastSpawned = randomEnemy;
+                do
+                {
+                    randomEnemy = currentWave.enemyTypes[Random.Range(0, currentWave.enemyTypes.Length)];
+                } while (lastSpawned == randomEnemy);
+
+            }
             currentWave.numOfEnemies--;
             nextSpawnTime = Time.time + currentWave.spawnInterval;
             if(currentWave.numOfEnemies == 0)

@@ -33,7 +33,7 @@ public class BasicMagic : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Health>().TakeDamage(10);
+            other.GetComponent<Health>().TakeDamage(20);
             Destroy(gameObject);
             Debug.Log("PlayerHealth: "+ other.GetComponent<Health>().currentHealth);
         }
