@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public PlayerStateMachine stateMachine { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public PlayerControllerHandler controllerHandler { get; private set; }
+    public Animator animator;
     public Camera cam;
     private int playerHealth;
     private int playerMaxHealth;
@@ -31,26 +32,35 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        //Intialize the state machine and all the needed states
         stateMachine = new PlayerStateMachine();
-        idleState = new PlayerIdleState(this, stateMachine);
-        moveState = new PlayerMovementState(this, stateMachine);
+        idleState = new PlayerIdleState(this, stateMachine, "idle");
+        moveState = new PlayerMovementState(this, stateMachine, "moving");
     }
 
     private void Start()
     {
+        //Grab dependent pieces
         rb = GetComponent<Rigidbody2D>();
         controllerHandler = GetComponent<PlayerControllerHandler>();
+        animator = GetComponent<Animator>();
         stateMachine.Initalize(idleState);
     }
 
     private void Update()
     {
         stateMachine.currentState.LogicUpdate();
+
+        if (controllerHandler.MovementInput != Vector2.zero)
+        {
+            animator.SetFloat("Horizontal", controllerHandler.MovementInput.x);
+            animator.SetFloat("Vertical", controllerHandler.MovementInput.y);
+        }
     }
 
     private void FixedUpdate()
     {
         stateMachine.currentState.PhysicsUpdate();
     }
-    
+
 }
