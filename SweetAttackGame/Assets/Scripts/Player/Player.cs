@@ -50,11 +50,17 @@ public class Player : MonoBehaviour
     private void Update()
     {
         stateMachine.currentState.LogicUpdate();
+
+        if (controllerHandler.MovementInput != Vector2.zero)
+        {
+            animator.SetFloat("Horizontal", controllerHandler.MovementInput.x);
+            animator.SetFloat("Vertical", controllerHandler.MovementInput.y);
+        }
     }
 
     private void FixedUpdate()
     {
         stateMachine.currentState.PhysicsUpdate();
     }
-    
+
 }

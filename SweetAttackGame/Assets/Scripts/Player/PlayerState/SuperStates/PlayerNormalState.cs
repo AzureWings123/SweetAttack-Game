@@ -9,7 +9,7 @@ public class PlayerNormalState : PlayerState
     
     protected Vector2 moveInput;
     public Vector2 lookInput{get; private set;}
-
+    
     protected bool attackInput;
     protected bool changeSpell;
 

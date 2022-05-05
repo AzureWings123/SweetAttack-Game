@@ -6,6 +6,7 @@ public class PlayerMovementState : PlayerNormalState
 {
     public PlayerMovementState (Player player, PlayerStateMachine stateMachine, string animBoolName): base(player, stateMachine, animBoolName){}
     
+    private float animCancel;
     // Start is called before the first frame update
     public override void DoChecks()
     {
@@ -30,7 +31,7 @@ public class PlayerMovementState : PlayerNormalState
         if (attackInput)
         {
             player.controllerHandler.externalStopAttackInput();
-            player.spell.castSpell();
+            player.spell.castSpell();        
         }
 
         if (changeSpell)
@@ -43,6 +44,8 @@ public class PlayerMovementState : PlayerNormalState
         {
             stateMachine.ChangeState(player.idleState);
         }
+
+        
     }
 
     public override void PhysicsUpdate()

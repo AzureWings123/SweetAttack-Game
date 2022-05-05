@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public void movement(Vector2 movementDirection)
     {
         //Moves object
-        player.rb.MovePosition(player.rb.position + movementDirection * player.moveSpeed * Time.fixedDeltaTime);
-        player.rig.ldRb.MovePosition(player.rb.position + movementDirection * player.moveSpeed * Time.fixedDeltaTime);
+        player.rb.MovePosition(player.rb.position + movementDirection.normalized * player.moveSpeed * Time.fixedDeltaTime);
+        player.rig.ldRb.MovePosition(player.rb.position + movementDirection.normalized * player.moveSpeed * Time.fixedDeltaTime);
     }
 
     public void look(Vector2 lookInput)

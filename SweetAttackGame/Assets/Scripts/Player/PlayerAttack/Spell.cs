@@ -92,7 +92,9 @@ public class Spell : MonoBehaviour
             GameObject spell = Instantiate(selectSpell(), firePoint.position, firePoint.rotation);
             Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
             rb.AddForce(firePoint.up * spellForce, ForceMode2D.Impulse);
-        }
+        } 
+        
+        player.animator.SetTrigger("cast");
     }
 
     public Spells returnSpell()
