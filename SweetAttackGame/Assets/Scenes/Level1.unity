@@ -8759,6 +8759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173f57db1df51144db9020c7ec73b2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BattleTheme: {fileID: 8300000, guid: 0b07428c884e45647b48860632fc6dbe, type: 3}
 --- !u!82 &1131582957
 AudioSource:
   m_ObjectHideFlags: 0

@@ -20,6 +20,11 @@ public class WaveSpawner : MonoBehaviour
     private float nextSpawnTime;
 
     private bool canSpawn = true;
+    private void Start()
+    {
+        canSpawn = true;
+        currentWaveNumber = 0;
+    }
     private void Update()
     {
         currentWave = waves[currentWaveNumber];

@@ -20,7 +20,11 @@ public class Health : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            if(gameObject.tag == "Enemy")
+            {
+                Destroy(gameObject);
+            }
+          
         }
 
 
