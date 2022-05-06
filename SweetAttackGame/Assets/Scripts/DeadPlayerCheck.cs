@@ -1,26 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class DeadPlayerCheck : MonoBehaviour
 {
+
     [SerializeField] private Health playerHealth;
     [SerializeField] private Image totalHealthBar;
     [SerializeField] private Image currentHealthBar;
 
-    //public GameObject GameOverCanvas;
-
-    private void Start()
+    public GameObject GameOverCanvas;
+    // Start is called before the first frame update
+    void Start()
     {
-        totalHealthBar.fillAmount = playerHealth.currentHealth / 100; 
+        
     }
-    private void Update()
+
+    // Update is called once per frame
+    void Update()
     {
-        currentHealthBar.fillAmount = playerHealth.currentHealth / 100;
-        /*
         if (playerHealth.currentHealth <= 0)
         {
             GameOverCanvas.SetActive(true);
         }
-        */
     }
 }
