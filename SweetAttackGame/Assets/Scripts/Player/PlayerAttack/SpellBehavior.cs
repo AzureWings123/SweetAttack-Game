@@ -6,7 +6,14 @@ public class SpellBehavior : MonoBehaviour
 {
    private void Start() 
    {
-    Destroy(gameObject, 5f);
+        if (gameObject.tag == "IceMagic")
+        {
+            Destroy(gameObject, 10f);
+        }
+        else
+        {
+            Destroy(gameObject, 3f);
+        }    
    }
    
    private void OnCollisionEnter2D(Collision2D other) 
@@ -17,7 +24,7 @@ public class SpellBehavior : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
-            if(gameObject.tag == "IceMagic")
+            if(gameObject.tag == "IceMagic" || gameObject.tag == "LightningMagic")
             {
                 collision.GetComponent<Health>().TakeDamage(10);
             }
@@ -25,6 +32,7 @@ public class SpellBehavior : MonoBehaviour
             {
                 collision.GetComponent<Health>().TakeDamage(20);
             }
+            
             
             Debug.Log(collision.GetComponent<EnemyBase>().enemyName + ": " + collision.GetComponent<Health>().currentHealth);
             Destroy(gameObject);

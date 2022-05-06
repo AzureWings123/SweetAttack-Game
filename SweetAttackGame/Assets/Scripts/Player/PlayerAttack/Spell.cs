@@ -62,11 +62,11 @@ public class Spell : MonoBehaviour
                 return fireballPrefab;
 
             case Spells.LIGHTNING_BOLT:
-                spellForce = 25f;
+                spellForce = 20f;
                 return lbPrefab;
             case Spells.MIST:
                 //This spell works differently from 
-                spellForce = 2f;
+                spellForce = 10f;
                 return mistPrefab;
             default:
                 print("error occured. Huh?");
