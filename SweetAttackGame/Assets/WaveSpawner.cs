@@ -20,6 +20,8 @@ public class WaveSpawner : MonoBehaviour
     private float nextSpawnTime;
 
     private bool canSpawn = true;
+
+    public GameObject GameOverCanvas;
     private void Start()
     {
         canSpawn = true;
@@ -37,6 +39,7 @@ public class WaveSpawner : MonoBehaviour
         }
         if (totalEnemies.Length == 0 && currentWaveNumber + 1 == waves.Length)
         {
+            GameOverCanvas.SetActive(true);
             Debug.Log("GameFinished"); //You won; UI to go to next level goes here
         }
     }
