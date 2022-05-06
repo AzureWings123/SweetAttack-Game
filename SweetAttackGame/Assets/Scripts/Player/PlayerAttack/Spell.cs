@@ -8,7 +8,7 @@ public class Spell : MonoBehaviour
     //Will change name of lightning later
     public enum Spells
     {
-        FIREBALL, LIGHTNING_BOLT, LIGHTNING
+        FIREBALL, LIGHTNING_BOLT, MIST
     }
 
     [SerializeField] Player player;
@@ -16,6 +16,7 @@ public class Spell : MonoBehaviour
     protected Spells currSpell;
     private Vector2 rayBoxSize;
     public Transform firePoint;
+    public Transform lookDir;
     private Vector2 lookPos = Vector2.zero;
     //Prefabs
     public GameObject fireballPrefab;
@@ -40,9 +41,9 @@ public class Spell : MonoBehaviour
         }
         else if (currSpell == Spells.LIGHTNING_BOLT)
         {
-            currSpell = Spells.LIGHTNING;
+            currSpell = Spells.MIST;
         }
-        else if (currSpell == Spells.LIGHTNING)
+        else if (currSpell == Spells.MIST)
         {
             currSpell = Spells.FIREBALL;
         }
@@ -62,7 +63,7 @@ public class Spell : MonoBehaviour
             case Spells.LIGHTNING_BOLT:
                 spellForce = 25f;
                 return lbPrefab;
-            case Spells.LIGHTNING:
+            case Spells.MIST:
                 //This spell works differently from 
                 spellForce = 0f;
                 return lbPrefab;
@@ -77,7 +78,7 @@ public class Spell : MonoBehaviour
     {
         //Make it so it differentiate between hitscan and projectile spells
         //Hitscan spell
-        if (currSpell == Spells.LIGHTNING)
+        if (currSpell == Spells.MIST)
         {
             
             rayBoxSize.x = 4f;
@@ -89,9 +90,10 @@ public class Spell : MonoBehaviour
         //Projectile spells
         else
         {
-            GameObject spell = Instantiate(selectSpell(), firePoint.position, firePoint.rotation);
+            GameObject spell = Instantiate(selectSpell(), firePoint.position, lookDir.rotation);
             Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
             rb.AddForce(firePoint.up * spellForce, ForceMode2D.Impulse);
+            
         } 
         
         player.animator.SetTrigger("cast");
@@ -105,7 +107,7 @@ public class Spell : MonoBehaviour
     private void Update()
     {
         //Only does calculation while spell is out in order to save on resources
-        if(currSpell == Spells.LIGHTNING)
+        if(currSpell == Spells.MIST)
         {
             lookPos = player.cam.ScreenToWorldPoint(player.controllerHandler.LookInput);
         }
