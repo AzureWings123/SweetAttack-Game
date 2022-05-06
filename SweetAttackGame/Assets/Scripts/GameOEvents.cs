@@ -32,4 +32,8 @@ public class GameOEvents : MonoBehaviour
     {
         SceneManager.LoadScene("MenuScene");
     }
+    public void NextLevel() 
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
 }
