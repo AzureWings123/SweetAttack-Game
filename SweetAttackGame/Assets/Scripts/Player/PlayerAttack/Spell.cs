@@ -21,7 +21,8 @@ public class Spell : MonoBehaviour
     //Prefabs
     public GameObject fireballPrefab;
     public GameObject lbPrefab;
-    
+    public GameObject MistPrefab;
+
 
     public float spellForce = 10f;
     public int manaCost = 5;
@@ -66,7 +67,7 @@ public class Spell : MonoBehaviour
             case Spells.MIST:
                 //This spell works differently from 
                 spellForce = 0f;
-                return lbPrefab;
+                return MistPrefab;
             default:
                 print("error occured. Huh?");
                 return fireballPrefab;
@@ -86,8 +87,17 @@ public class Spell : MonoBehaviour
             //Make a boxcast that is at a fixed width and a length of origin            
             RaycastHit2D box = Physics2D.BoxCast(firePoint.position, rayBoxSize, 0f, Vector2.up);
             Debug.DrawRay(firePoint.position + new Vector3( rayBoxSize.x, 0), Vector2.up * (rayBoxSize.y), Color.blue);
+            GameObject spell = Instantiate(selectSpell(), firePoint.position, firePoint.rotation);
+
         }
         //Projectile spells
+        else if (currSpell == Spells.LIGHTNING_BOLT)
+        {
+            GameObject spell = Instantiate(selectSpell(), firePoint.position, firePoint.rotation);
+            Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
+            rb.AddForce(firePoint.up * spellForce, ForceMode2D.Impulse);
+
+        }
         else
         {
             GameObject spell = Instantiate(selectSpell(), firePoint.position, lookDir.rotation);

@@ -19,13 +19,17 @@ public class SpellBehavior : MonoBehaviour
         {
             if(gameObject.tag == "IceMagic")
             {
-                collision.GetComponent<Health>().TakeDamage(10);
+                collision.GetComponent<Health>().TakeDamage(30);
             }
             else if(gameObject.tag == "FireMagic")
             {
                 collision.GetComponent<Health>().TakeDamage(20);
             }
-            
+            else if (gameObject.tag == "Ice") //Supposed to be Lightning, for some reason, Unity isn't letting me update tags
+            {
+                collision.GetComponent<Health>().TakeDamage(10);
+            }
+
             Debug.Log(collision.GetComponent<EnemyBase>().enemyName + ": " + collision.GetComponent<Health>().currentHealth);
             Destroy(gameObject);
         }
