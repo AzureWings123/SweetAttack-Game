@@ -27,4 +27,9 @@ public class GameOEvents : MonoBehaviour
     {
         SceneManager.LoadScene("CreditScene");
     }
+
+    public void GoBack() 
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
 }

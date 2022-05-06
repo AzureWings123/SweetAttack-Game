@@ -22,6 +22,10 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
+        
     }
+    
 
 }
