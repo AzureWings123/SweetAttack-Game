@@ -34,6 +34,6 @@ public class GameOEvents : MonoBehaviour
     }
     public void NextLevel() 
     {
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("Level1");
     }
 }
