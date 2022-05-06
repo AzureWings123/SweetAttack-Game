@@ -28,18 +28,9 @@ public class PlayerIdleState : PlayerNormalState
         base.LogicUpdate();
 
         if (attackInput)
-        {
-            //Projectile basis => needs to be turned off after hitting once
-            if (player.spell.returnSpell() != Spell.Spells.LIGHTNING)
-            {
-                player.controllerHandler.externalStopAttackInput();
-                player.spell.castSpell();
-            }
-            //Raycast spells can be held down
-            else
-            {
-                player.spell.castSpell();
-            }
+        { 
+            player.controllerHandler.externalStopAttackInput();
+            player.spell.castSpell();
         }
 
         if (changeSpell)
