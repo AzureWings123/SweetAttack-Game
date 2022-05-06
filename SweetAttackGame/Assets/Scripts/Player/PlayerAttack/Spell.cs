@@ -22,7 +22,6 @@ public class Spell : MonoBehaviour
     public GameObject fireballPrefab;
     public GameObject lbPrefab;
     public GameObject mistPrefab;
-    
 
     public float spellForce = 10f;
     public int manaCost = 5;
@@ -68,6 +67,7 @@ public class Spell : MonoBehaviour
                 //This spell works differently from 
                 spellForce = 10f;
                 return mistPrefab;
+
             default:
                 print("error occured. Huh?");
                 return fireballPrefab;
@@ -88,6 +88,7 @@ public class Spell : MonoBehaviour
         }
         //Projectile spells
         else if (currSpell == Spells.LIGHTNING_BOLT)
+
         {
             GameObject spell = Instantiate(selectSpell(), firePoint.position, firePoint.rotation);
             Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
