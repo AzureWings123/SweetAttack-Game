@@ -7,8 +7,6 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Image totalHealthBar;
     [SerializeField] private Image currentHealthBar;
 
-    //public GameObject GameOverCanvas;
-
     private void Start()
     {
         totalHealthBar.fillAmount = playerHealth.currentHealth / 100; 
@@ -16,11 +14,5 @@ public class HealthBar : MonoBehaviour
     private void Update()
     {
         currentHealthBar.fillAmount = playerHealth.currentHealth / 100;
-        /*
-        if (playerHealth.currentHealth <= 0)
-        {
-            GameOverCanvas.SetActive(true);
-        }
-        */
     }
 }
