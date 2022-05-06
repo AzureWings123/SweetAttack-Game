@@ -1924,6 +1924,7 @@ MonoBehaviour:
   lookDir: {fileID: 1874211771}
   fireballPrefab: {fileID: 5849544196662882314, guid: f141d47b122dfed42b96124c64c23e73, type: 3}
   lbPrefab: {fileID: 1276751371296491574, guid: 42e8f38ac17169a408b46add86a5439a, type: 3}
+  mistPrefab: {fileID: 9142985039715137219, guid: c245a7e06180f4748a800b9135b82e62, type: 3}
   spellForce: 10
   manaCost: 5
 --- !u!114 &2137310819

@@ -17,10 +17,11 @@ public class Spell : MonoBehaviour
     private Vector2 rayBoxSize;
     public Transform firePoint;
     public Transform lookDir;
-    private Vector2 lookPos = Vector2.zero;
+    private Vector3 lookPos = Vector3.zero;
     //Prefabs
     public GameObject fireballPrefab;
     public GameObject lbPrefab;
+    public GameObject mistPrefab;
     
 
     public float spellForce = 10f;
@@ -65,8 +66,8 @@ public class Spell : MonoBehaviour
                 return lbPrefab;
             case Spells.MIST:
                 //This spell works differently from 
-                spellForce = 0f;
-                return lbPrefab;
+                spellForce = 2f;
+                return mistPrefab;
             default:
                 print("error occured. Huh?");
                 return fireballPrefab;
@@ -78,22 +79,19 @@ public class Spell : MonoBehaviour
     {
         //Make it so it differentiate between hitscan and projectile spells
         //Hitscan spell
-        if (currSpell == Spells.MIST)
+        if (currSpell == Spells.MIST || currSpell == Spells.FIREBALL)
         {
-            
-            rayBoxSize.x = 4f;
-            rayBoxSize.y = Mathf.Sqrt(Mathf.Pow(lookPos.x - firePoint.position.x, 2) + Mathf.Pow(lookPos.y - firePoint.position.y, 2));
-            //Make a boxcast that is at a fixed width and a length of origin            
-            RaycastHit2D box = Physics2D.BoxCast(firePoint.position, rayBoxSize, 0f, Vector2.up);
-            Debug.DrawRay(firePoint.position + new Vector3( rayBoxSize.x, 0), Vector2.up * (rayBoxSize.y), Color.blue);
-        }
-        //Projectile spells
-        else
-        {
+            Vector2 target = lookPos;
             GameObject spell = Instantiate(selectSpell(), firePoint.position, lookDir.rotation);
             Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
             rb.AddForce(firePoint.up * spellForce, ForceMode2D.Impulse);
-            
+        }
+        //Projectile spells
+        else if (currSpell == Spells.LIGHTNING_BOLT)
+        {
+            GameObject spell = Instantiate(selectSpell(), firePoint.position, firePoint.rotation);
+            Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
+            rb.AddForce(firePoint.up * spellForce, ForceMode2D.Impulse);
         } 
         
         player.animator.SetTrigger("cast");
