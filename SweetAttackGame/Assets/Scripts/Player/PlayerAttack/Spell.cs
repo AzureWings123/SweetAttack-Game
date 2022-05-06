@@ -23,6 +23,10 @@ public class Spell : MonoBehaviour
     public GameObject lbPrefab;
     public GameObject mistPrefab;
 
+    [SerializeField] private AudioClip fireBallSound;
+    [SerializeField] private AudioClip MistSound;
+    [SerializeField] private AudioClip LightningSound;
+
     public float spellForce = 10f;
     public int manaCost = 5;
 
@@ -83,6 +87,14 @@ public class Spell : MonoBehaviour
         {
             Vector2 target = lookPos;
             GameObject spell = Instantiate(selectSpell(), firePoint.position, lookDir.rotation);
+            if(currSpell == Spells.MIST)
+            {
+                SoundManagerScript.instance.PlaySound(MistSound);
+            }
+            else if (currSpell == Spells.FIREBALL)
+            {
+                SoundManagerScript.instance.PlaySound(fireBallSound);
+            }
             Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
             rb.AddForce(firePoint.up * spellForce, ForceMode2D.Impulse);
         }
@@ -91,6 +103,7 @@ public class Spell : MonoBehaviour
 
         {
             GameObject spell = Instantiate(selectSpell(), firePoint.position, firePoint.rotation);
+            SoundManagerScript.instance.PlaySound(LightningSound);
             Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
             rb.AddForce(firePoint.up * spellForce, ForceMode2D.Impulse);
         } 
