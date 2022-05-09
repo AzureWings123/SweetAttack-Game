@@ -9,7 +9,7 @@ public class GameOEvents : MonoBehaviour
     // Start is called before the first frame update
     public void ReplayGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class GameOEvents : MonoBehaviour
 
     public void StartGame() 
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
 
      public void StartCredits() 
@@ -31,5 +31,9 @@ public class GameOEvents : MonoBehaviour
     public void GoBack() 
     {
         SceneManager.LoadScene("MenuScene");
+    }
+    public void NextLevel() 
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }
