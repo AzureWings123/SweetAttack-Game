@@ -81,8 +81,8 @@ public class Spell : MonoBehaviour
     //Create GameObject and send it out with correct amount of force needed.
     public void castSpell()
     {
-        //Make it so it differentiate between hitscan and projectile spells
-        //Hitscan spell
+        //This is temporary for sprite rotation
+        //Will import fixed sprites later
         if (currSpell == Spells.MIST || currSpell == Spells.FIREBALL)
         {
             Vector2 target = lookPos;
@@ -97,6 +97,15 @@ public class Spell : MonoBehaviour
             }
             Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
             rb.AddForce(firePoint.up * spellForce, ForceMode2D.Impulse);
+
+            //In order to have mist work as needed, we need to give certain properties such as health
+            //Reminder to set that in spell behavior later
+
+            //We need mist to travel a certain distance
+            //The current drag set is 3 -> we need to essentailly use F = W * D in order to set the correct force
+            //Before we can set the distance by taking the cordinates of fire point - coordinates
+            //Afterwards we find the distance by taking the vector and sqrt(x^2 + y^2)
+            //If any other devs see this sorry this is just a mental note for later when I do code this in
         }
         //Projectile spells
         else if (currSpell == Spells.LIGHTNING_BOLT)

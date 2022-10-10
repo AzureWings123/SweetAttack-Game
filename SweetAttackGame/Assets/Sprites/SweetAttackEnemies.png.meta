@@ -81,7 +81,7 @@ TextureImporter:
       213: 1989511605847655191
     second: SweetAttackEnemies_25
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -102,6 +102,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -110,7 +111,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -140,6 +141,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -167,6 +169,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -736,6 +750,33 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      SweetAttackEnemies_20: 6749803195068142037
+      SweetAttackEnemies_2: -8845765100981468012
+      SweetAttackEnemies_3: -7835146338013982320
+      SweetAttackEnemies_8: -8946635997440634693
+      SweetAttackEnemies_11: -2909624985397555294
+      SweetAttackEnemies_6: -3851468161449189016
+      SweetAttackEnemies_22: -3035331557901206466
+      SweetAttackEnemies_0: 8680590425843699585
+      SweetAttackEnemies_25: 1989511605847655191
+      SweetAttackEnemies_24: 1788143965255407371
+      SweetAttackEnemies_15: 888265998339783711
+      SweetAttackEnemies_5: 7149293854847292466
+      SweetAttackEnemies_12: -3648873684786051658
+      SweetAttackEnemies_14: 7111765761646753379
+      SweetAttackEnemies_16: -7162672664428848084
+      SweetAttackEnemies_1: -8299797821124208666
+      SweetAttackEnemies_7: 1745533821034113698
+      SweetAttackEnemies_4: 981763414130406399
+      SweetAttackEnemies_17: 4473474187529115789
+      SweetAttackEnemies_19: 1859501952550492505
+      SweetAttackEnemies_23: 6236370123898112528
+      SweetAttackEnemies_10: -7797966770433348948
+      SweetAttackEnemies_21: -4596673763770910843
+      SweetAttackEnemies_13: 8694127138103954436
+      SweetAttackEnemies_18: -3925364416567130587
+      SweetAttackEnemies_9: -3164590754534246491
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
