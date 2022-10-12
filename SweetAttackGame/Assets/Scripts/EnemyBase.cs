@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {
     [SerializeField] public string enemyName;
-    [SerializeField] private float moveSpeed;
-    private Transform target; // Enemy target = player
+    [SerializeField] protected float moveSpeed; //changed from private
+    protected Transform target; // Enemy target = player ***changed from private
     private SpriteRenderer sp;
     Rigidbody2D rb;
     void Start()
