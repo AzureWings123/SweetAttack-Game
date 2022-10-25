@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 3369521127324539556}
   - component: {fileID: 3369521127324539554}
   - component: {fileID: 3369521127324539555}
+  - component: {fileID: 2385147998674206560}
   m_Layer: 0
   m_Name: Tele+HMagic
   m_TagString: Enemy
@@ -307,6 +308,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 80
+--- !u!114 &2385147998674206560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369521127324539577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5c700971f2dae4fb799a80709a9eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingEffect: 0
 --- !u!1 &6273575273381474503
 GameObject:
   m_ObjectHideFlags: 0

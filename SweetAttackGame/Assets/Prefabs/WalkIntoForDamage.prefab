@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 255150078061804891}
   - component: {fileID: 255150078061804887}
   - component: {fileID: 255150078061804886}
+  - component: {fileID: -7968267219744932282}
   m_Layer: 0
   m_Name: WalkIntoForDamage
   m_TagString: Enemy
@@ -129,6 +130,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+--- !u!114 &-7968267219744932282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255150078061804889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5c700971f2dae4fb799a80709a9eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingEffect: 0
 --- !u!1 &2418457312199409691
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +155,7 @@ GameObject:
   - component: {fileID: 5348879633149747115}
   - component: {fileID: 1698275284820137821}
   - component: {fileID: 7384316138086358225}
+  - component: {fileID: 3247457099168722610}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -222,6 +237,19 @@ MonoBehaviour:
   enemyHealth: {fileID: 255150078061804886}
   totalHealthBar: {fileID: 3942525792432856428}
   currentHealthBar: {fileID: 6677557102003161996}
+--- !u!114 &3247457099168722610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2418457312199409691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5c700971f2dae4fb799a80709a9eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingEffect: 0
 --- !u!1 &5175779811592376534
 GameObject:
   m_ObjectHideFlags: 0
