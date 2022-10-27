@@ -13,7 +13,9 @@ public class SpellBehavior : MonoBehaviour
         else
         {
             Destroy(gameObject, 3f);
-        }    
+        }
+
+        
    }
    
    private void OnCollisionEnter2D(Collision2D other) 
@@ -30,6 +32,7 @@ public class SpellBehavior : MonoBehaviour
                 collision.GetComponent<StatusEffect>().ChangeEffect(1);
                 Debug.Log("ice");
                 Debug.Log(collision.GetComponent <StatusEffect>().currentEffect);
+                
             }
             else if (gameObject.tag == "LightningMagic")
             {
