@@ -23,6 +23,9 @@ public class DeadPlayerCheck : MonoBehaviour
         if (playerHealth.currentHealth <= 0)
         {
             GameOverCanvas.SetActive(true);
+            playerHealth.currentHealth = 100;
+            Time.timeScale = 0f;
         }
+
     }
 }
