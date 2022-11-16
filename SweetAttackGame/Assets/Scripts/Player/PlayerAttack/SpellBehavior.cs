@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SpellBehavior : MonoBehaviour
 {
-   private void Start() 
+    [SerializeField] private int baseDamage;
+    [SerializeField] public int damageAdd;
+
+    private void Start() 
    {
         if (gameObject.tag == "IceMagic")
         {
@@ -26,9 +29,11 @@ public class SpellBehavior : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
-            if(gameObject.tag == "IceMagic")
+            if (gameObject.tag == "IceMagic")
             {
-                collision.GetComponent<Health>().TakeDamage(30);
+                damageAdd *= (PlayerPrefs.GetInt("IceLevel")-1);
+                baseDamage += damageAdd;
+                collision.GetComponent<Health>().TakeDamage(baseDamage);
                 collision.GetComponent<StatusEffect>().ChangeEffect(1);
                 Debug.Log("ice");
                 Debug.Log(collision.GetComponent <StatusEffect>().currentEffect);
@@ -36,14 +41,18 @@ public class SpellBehavior : MonoBehaviour
             }
             else if (gameObject.tag == "LightningMagic")
             {
-                collision.GetComponent<Health>().TakeDamage(30);
+                damageAdd *= (PlayerPrefs.GetInt("ElecLevel")-1);
+                baseDamage += damageAdd;
+                collision.GetComponent<Health>().TakeDamage(baseDamage);
                 collision.GetComponent<StatusEffect>().ChangeEffect(2);
                 Debug.Log("lightning");
                 Debug.Log(collision.GetComponent<StatusEffect>().currentEffect);
             }
             else if(gameObject.tag == "FireMagic")
             {
-                collision.GetComponent<Health>().TakeDamage(20);
+                damageAdd *= (PlayerPrefs.GetInt("FireLevel")-1);
+                baseDamage += damageAdd;
+                collision.GetComponent<Health>().TakeDamage(baseDamage);
                 collision.GetComponent<StatusEffect>().ChangeEffect(3);
                 Debug.Log("fire");
                 Debug.Log(collision.GetComponent<StatusEffect>().currentEffect);
