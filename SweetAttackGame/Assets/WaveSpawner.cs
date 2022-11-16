@@ -40,6 +40,7 @@ public class WaveSpawner : MonoBehaviour
         if (totalEnemies.Length == 0 && currentWaveNumber + 1 == waves.Length)
         {
             GameOverCanvas.SetActive(true);
+            Time.timeScale = 0f;
             Debug.Log("GameFinished"); //You won; UI to go to next level goes here
         }
     }

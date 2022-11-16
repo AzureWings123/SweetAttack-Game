@@ -42,5 +42,6 @@ public class GameOEvents : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        print(SceneManager.GetActiveScene().name);
     }
 }
