@@ -44,4 +44,10 @@ public class GameOEvents : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         print(SceneManager.GetActiveScene().name);
     }
+    public void Upgrades()
+    {
+        Time.timeScale = 1f;
+        PlayerPrefs.SetInt("PrevLevel", SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("UpgradeMenu");
+    }
 }
