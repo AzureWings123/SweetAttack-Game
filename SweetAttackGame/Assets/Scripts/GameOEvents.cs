@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOEvents : MonoBehaviour
 {
     // Start is called before the first frame update
+
     public void ReplayGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -20,20 +23,30 @@ public class GameOEvents : MonoBehaviour
 
     public void StartGame() 
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Level1");
     }
 
      public void StartCredits() 
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("CreditScene");
     }
 
     public void GoBack() 
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MenuScene");
     }
     public void NextLevel() 
     {
-        SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void Upgrades()
+    {
+        Time.timeScale = 1f;
+        PlayerPrefs.SetInt("NextLevel", SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("UpgradeMenu");
     }
 }

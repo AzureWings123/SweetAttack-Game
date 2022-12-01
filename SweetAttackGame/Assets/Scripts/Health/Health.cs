@@ -5,12 +5,13 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
-    public float currentHealth { get; private set; }
+    public float currentHealth { get; set; }
 
     private void Awake()
     {
         currentHealth = startingHealth;
     }
+    
     public void TakeDamage(float _damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
