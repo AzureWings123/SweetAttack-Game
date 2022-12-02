@@ -10,7 +10,8 @@ public class BasicMagic : MonoBehaviour
     [SerializeField] private float maxLife = 8.0f;
     private float lifeBtwTimer;
     Rigidbody2D rb;
-    
+    [SerializeField] private AudioClip BMSFX;
+
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class BasicMagic : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         moveDirection = (target.transform.position - transform.position).normalized * shootSpeed;
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
+        SoundManagerScript.instance.PlaySound(BMSFX);
     }
     private void Update()
     {

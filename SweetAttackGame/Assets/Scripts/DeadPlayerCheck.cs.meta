@@ -3,7 +3,12 @@ guid: 5dc362cc7c41c9e47a96b5efadb3b524
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerHealth: {instanceID: 0}
+  - totalHealthBar: {instanceID: 0}
+  - currentHealthBar: {instanceID: 0}
+  - GOSFX: {fileID: 8300000, guid: b4de883725486e540b78afe99fe03490, type: 3}
+  - GameOverCanvas: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

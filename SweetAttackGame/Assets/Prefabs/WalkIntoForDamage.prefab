@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  GOSFX: {fileID: 0}
 --- !u!114 &-7968267219744932282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +152,9 @@ MonoBehaviour:
   fireEffect: {fileID: 21300000, guid: 0f0f2abbbb206454fa304ebcb6f3b111, type: 3}
   iceEffect: {fileID: 21300000, guid: 36450275a861f59458e57f8c3ac3cb52, type: 3}
   lightningEffect: {fileID: 21300000, guid: d3853687b7b82e74993aa394b76d4525, type: 3}
+  Burn: {fileID: 8300000, guid: f65a234573742ba43bafdbf5bcbe00a8, type: 3}
+  Chill: {fileID: 8300000, guid: 6b2c0a3b752d54f42a816feb13e892b5, type: 3}
+  Shock: {fileID: 8300000, guid: 46ff6b852c6e7c04193c9ac2029393a2, type: 3}
 --- !u!1 &2418457312199409691
 GameObject:
   m_ObjectHideFlags: 0

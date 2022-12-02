@@ -191,6 +191,7 @@ MonoBehaviour:
   - {fileID: 1565396921}
   - {fileID: 197947718}
   GameOverCanvas: {fileID: 2044428641}
+  WinSFX: {fileID: 0}
 --- !u!4 &40403514
 Transform:
   m_ObjectHideFlags: 0
@@ -9684,6 +9685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  GOSFX: {fileID: 8300000, guid: b4de883725486e540b78afe99fe03490, type: 3}
 --- !u!95 &999012553
 Animator:
   serializedVersion: 4

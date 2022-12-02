@@ -11,6 +11,9 @@ public class StatusEffect : MonoBehaviour
     public Sprite fireEffect;
     public Sprite iceEffect;
     public Sprite lightningEffect;
+    [SerializeField] private AudioClip Burn;
+    [SerializeField] private AudioClip Chill;
+    [SerializeField] private AudioClip Shock;
     public float currentEffect { get; private set; }
     private void Awake()
     {
@@ -42,14 +45,17 @@ public class StatusEffect : MonoBehaviour
         else if (effect == 1)
         {
             currentImage.sprite = iceEffect;
+            SoundManagerScript.instance.PlaySound(Chill);
         }
         else if (effect == 2)
         {
-            currentImage.sprite = lightningEffect;
+            currentImage.sprite = lightningEffect; 
+            SoundManagerScript.instance.PlaySound(Shock);
         }
         else if (effect == 3)
         {
             currentImage.sprite = fireEffect;
+            SoundManagerScript.instance.PlaySound(Burn);
         }
 
     }
