@@ -160,21 +160,26 @@ MonoBehaviour:
     - {fileID: 3369521127324539577, guid: 12519d54cf59e7c44984986105ed11b8, type: 3}
     spawnInterval: 3
   - waveName: Wave 2
-    numOfEnemies: 3
+    numOfEnemies: 5
     enemyTypes:
     - {fileID: 1373497576912688349, guid: 45849aab97df2964383f31d1ab7bd91d, type: 3}
     - {fileID: 255150078061804889, guid: c66635898f3dbbc4585ab0cdd4cc4bfb, type: 3}
-    - {fileID: 3369521127324539577, guid: 12519d54cf59e7c44984986105ed11b8, type: 3}
     spawnInterval: 2
   - waveName: Wave 3
-    numOfEnemies: 5
+    numOfEnemies: 6
     enemyTypes:
     - {fileID: 3369521127324539577, guid: 12519d54cf59e7c44984986105ed11b8, type: 3}
     - {fileID: 255150078061804889, guid: c66635898f3dbbc4585ab0cdd4cc4bfb, type: 3}
+    spawnInterval: 1
+  - waveName: Final Wave
+    numOfEnemies: 6
+    enemyTypes:
+    - {fileID: 255150078061804889, guid: c66635898f3dbbc4585ab0cdd4cc4bfb, type: 3}
+    - {fileID: 3369521127324539577, guid: 12519d54cf59e7c44984986105ed11b8, type: 3}
     - {fileID: 1373497576912688349, guid: 45849aab97df2964383f31d1ab7bd91d, type: 3}
     spawnInterval: 1
   - waveName: Final Wave
-    numOfEnemies: 5
+    numOfEnemies: 7
     enemyTypes:
     - {fileID: 255150078061804889, guid: c66635898f3dbbc4585ab0cdd4cc4bfb, type: 3}
     - {fileID: 3369521127324539577, guid: 12519d54cf59e7c44984986105ed11b8, type: 3}
