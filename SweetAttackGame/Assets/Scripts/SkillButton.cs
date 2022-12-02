@@ -10,22 +10,53 @@ public class SkillButton : MonoBehaviour
 
     public void UpgradeFire()
     {
-        int fLevel = PlayerPrefs.GetInt("FireLevel");
-        fLevel++;
-        PlayerPrefs.SetInt("FireLevel", fLevel);
-        print(PlayerPrefs.GetInt("FireLevel"));
+        if (PlayerPrefs.GetInt("FireCost") <= PlayerPrefs.GetInt("SkillPoints"))
+        {
+            int fCost = PlayerPrefs.GetInt("FireCost");
+            int SP = PlayerPrefs.GetInt("SkillPoints");
+            int fLevel = PlayerPrefs.GetInt("FireLevel");
+            int hold = SP - fCost;
+            PlayerPrefs.SetInt("SkillPoints", hold);
+            int hold2 = fCost + fLevel;
+            PlayerPrefs.SetInt("FireCost", hold2);
+            fLevel++;
+            PlayerPrefs.SetInt("FireLevel", fLevel);
+            print(PlayerPrefs.GetInt("FireLevel"));
+        }
     }
     public void UpgradeIce()
     {
-        int iLevel = PlayerPrefs.GetInt("IceLevel");
-        iLevel++;
-        PlayerPrefs.SetInt("IceLevel", iLevel);
+        if (PlayerPrefs.GetInt("IceCost") <= PlayerPrefs.GetInt("SkillPoints"))
+        {
+            int iCost = PlayerPrefs.GetInt("IceCost");
+            int SP = PlayerPrefs.GetInt("SkillPoints");
+            int iLevel = PlayerPrefs.GetInt("IceLevel");
+            int hold = SP - iCost;
+            PlayerPrefs.SetInt("SkillPoints", hold);
+            int hold2 = iCost + iLevel;
+            PlayerPrefs.SetInt("IceCost", hold2);
+            iLevel++;
+            PlayerPrefs.SetInt("IceLevel", iLevel);
+            print(PlayerPrefs.GetInt("IceLevel"));
+        }
+    
     }
     public void UpgradeElec()
     {
-        int lLevel = PlayerPrefs.GetInt("ElecLevel");
-        lLevel++;
-        PlayerPrefs.SetInt("ElecLevel", lLevel);
+        if (PlayerPrefs.GetInt("ElecCost") <= PlayerPrefs.GetInt("SkillPoints"))
+        {
+            int lCost = PlayerPrefs.GetInt("ElecCost");
+            int SP = PlayerPrefs.GetInt("SkillPoints");
+            int lLevel = PlayerPrefs.GetInt("ElecLevel");
+            int hold = SP - lCost;
+            PlayerPrefs.SetInt("SkillPoints", hold);
+            int hold2 = lCost + lLevel;
+            PlayerPrefs.SetInt("ElecCost", hold2);
+            lLevel++;
+            PlayerPrefs.SetInt("ElecLevel", lLevel);
+            print(PlayerPrefs.GetInt("ElecLevel"));
+        }
+       
     }
     public void contButton()
     {

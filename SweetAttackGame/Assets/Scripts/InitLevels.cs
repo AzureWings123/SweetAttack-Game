@@ -11,6 +11,10 @@ public class InitLevels : MonoBehaviour
             PlayerPrefs.SetInt("FireLevel", 1);
             PlayerPrefs.SetInt("IceLevel", 1);
             PlayerPrefs.SetInt("ElecLevel", 1);
+            PlayerPrefs.SetInt("FireCost", 1);
+            PlayerPrefs.SetInt("IceCost", 1);
+            PlayerPrefs.SetInt("ElecCost", 1);
+            PlayerPrefs.SetInt("SkillPoints", 0);
    
     }
 
