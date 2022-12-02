@@ -41,6 +41,9 @@ public class WaveSpawner : MonoBehaviour
         {
             GameOverCanvas.SetActive(true);
             Time.timeScale = 0f;
+            int SP = PlayerPrefs.GetInt("SkillPoints");
+            SP += 10;
+            PlayerPrefs.SetInt("SkillPoints", SP);
             Debug.Log("GameFinished"); //You won; UI to go to next level goes here
         }
     }

@@ -12,6 +12,9 @@ TagManager:
   - FireMagic
   - LightningMagic
   - Status
+  - FCost
+  - ICost
+  - LCost
   layers:
   - Default
   - TransparentFX
