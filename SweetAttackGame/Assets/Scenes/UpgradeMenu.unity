@@ -319,7 +319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5443300441455438276, guid: 67885bf482eea6041bd9439b80727cf3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b27ade86bee32694f9a914ffa9180872, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1664,7 +1664,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2676206600845133928, guid: 67885bf482eea6041bd9439b80727cf3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f0f2abbbb206454fa304ebcb6f3b111, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1893,7 +1893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Perfect for... uh... its shocking
+  m_text: 'Shock the flavor and the enemies
 
 '
   m_isRightToLeft: 0
@@ -1958,7 +1958,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -96.422935, w: 0}
+  m_margin: {x: 0, y: 0, z: -170.27483, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2246,7 +2246,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7173472124918347715, guid: 67885bf482eea6041bd9439b80727cf3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88be7ea66187dc148953d8b75422f9a3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
