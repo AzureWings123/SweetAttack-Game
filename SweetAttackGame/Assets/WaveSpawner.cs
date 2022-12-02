@@ -22,6 +22,7 @@ public class WaveSpawner : MonoBehaviour
     private bool canSpawn = true;
 
     public GameObject GameOverCanvas;
+    [SerializeField] private AudioClip WinSFX;
     private void Start()
     {
         canSpawn = true;
@@ -44,7 +45,7 @@ public class WaveSpawner : MonoBehaviour
             int SP = PlayerPrefs.GetInt("SkillPoints");
             SP += 10;
             PlayerPrefs.SetInt("SkillPoints", SP);
-            Debug.Log("GameFinished"); //You won; UI to go to next level goes here
+            SoundManagerScript.instance.PlaySound(WinSFX);
         }
     }
     void SpawnWave()

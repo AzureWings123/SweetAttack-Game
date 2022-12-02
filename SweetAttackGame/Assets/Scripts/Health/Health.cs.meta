@@ -3,7 +3,8 @@ guid: 1f9bd04197fdbac4a8c92ceb0a588385
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - WinSFX: {fileID: 8300000, guid: b4de883725486e540b78afe99fe03490, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

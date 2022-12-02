@@ -8,11 +8,13 @@ public class HomingMagic : MonoBehaviour
     [SerializeField] private float shootSpeed;
 
     [SerializeField] private float maxLife = 4.0f;
+    [SerializeField] private AudioClip HMSFX;
     private float lifeBtwTimer;
 
     private void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        SoundManagerScript.instance.PlaySound(HMSFX);
     }
 
     private void Update()

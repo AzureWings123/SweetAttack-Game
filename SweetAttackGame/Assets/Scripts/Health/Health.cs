@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float currentHealth { get; set; }
+    [SerializeField] private AudioClip GOSFX;
 
     private void Awake()
     {
@@ -21,16 +22,19 @@ public class Health : MonoBehaviour
         }
         else
         {
-            if(gameObject.tag == "Enemy")
+            if (gameObject.tag == "Enemy")
             {
                 Destroy(gameObject);
             }
-          
+            else if (gameObject.tag == "Player")
+            {
+                SoundManagerScript.instance.PlaySound(GOSFX);
+            }
+
         }
-
-
         
     }
     
+
 
 }

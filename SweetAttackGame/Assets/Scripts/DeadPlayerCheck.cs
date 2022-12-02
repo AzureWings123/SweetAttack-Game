@@ -9,6 +9,7 @@ public class DeadPlayerCheck : MonoBehaviour
     [SerializeField] private Health playerHealth;
     [SerializeField] private Image totalHealthBar;
     [SerializeField] private Image currentHealthBar;
+    
 
     public GameObject GameOverCanvas;
     // Start is called before the first frame update
