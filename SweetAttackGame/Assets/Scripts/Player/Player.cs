@@ -49,9 +49,12 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        stateMachine.currentState.LogicUpdate();
-
-        if (controllerHandler.MovementInput != Vector2.zero)
+        if(!controllerHandler.pauseManager.GameIsPaused)
+        {
+            stateMachine.currentState.LogicUpdate();
+        }
+        
+        if (controllerHandler.MovementInput != Vector2.zero && !controllerHandler.pauseManager.GameIsPaused)
         {
             animator.SetFloat("Horizontal", controllerHandler.MovementInput.x);
             animator.SetFloat("Vertical", controllerHandler.MovementInput.y);
@@ -60,7 +63,10 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        stateMachine.currentState.PhysicsUpdate();
+        if(!controllerHandler.pauseManager.GameIsPaused)
+        {
+            stateMachine.currentState.PhysicsUpdate();
+        }
     }
 
 }
