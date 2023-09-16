@@ -1,41 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 [System.Serializable]
 public class Wave2
 {
     public string waveName;
-    public Group[] groups;
-    public Transform[] spawnPoints;
+    public float spawnInterval;
 
-    private int currentGroupNumber = -1;
+    public EnemyAndAmount[] enemies;
 
-    public int amountOfEnemies()
+    public int totalNumberOfEnemies()
     {
-        int amount = 0;
-        foreach (Group group in groups)
+        int output = 0;
+        foreach (EnemyAndAmount enemy in enemies)
         {
-            amount += group.totalAmount();
+            output += enemy.amount;
         }
-        return amount;
+        return output;
     }
 
-    public void StartWave()
-    {   
-        NextGroup();
-    }
-
-    private void NextGroup()
+    public int numberOfGroupsOfEnemies()
     {
-        if(currentGroupNumber + 1 < groups.Length)
-        {
-            currentGroupNumber++;
-            groups[currentGroupNumber].Spawn(spawnPoints);
-        }
-        else
-        {
-            // finished wave
-        }
+        return enemies.Length;
     }
 }

@@ -10,6 +10,7 @@ public class Wave
     public GameObject[] enemyTypes;
     public float spawnInterval;
 }
+
 public class WaveSpawner : MonoBehaviour
 {
     public Wave[] waves;

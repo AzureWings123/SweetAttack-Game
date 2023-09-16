@@ -5,7 +5,7 @@ using UnityEngine;
 public class Teleporter : EnemyBase
 {
     private float teleRate = 2.5f;
-    private float teleTimer;
+    private float teleTimer = 0.0f;
     private bool teleporting = false;
 
     private float shootRate = 2.0f;
