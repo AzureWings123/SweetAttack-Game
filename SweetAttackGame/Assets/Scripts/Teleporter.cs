@@ -4,29 +4,43 @@ using UnityEngine;
 
 public class Teleporter : EnemyBase
 {
-    private float teleRate = 2.0f;
+    private float teleRate = 2.5f;
     private float teleTimer;
+    private bool teleporting = false;
 
     private float shootRate = 2.0f;
     private float shootTimer;
 
     public GameObject projectile;
 
+    private ParticleSystem startTPParticles;
+    private ParticleSystem endTPParticles;
+
     [SerializeField] private float minX, maxX, minY, maxY;
     
+    protected override void Initialize()
+    {
+        base.Initialize();
+
+        startTPParticles = transform.Find("Start_Teleport_Particles").GetComponent<ParticleSystem>();
+        endTPParticles = transform.Find("End_Teleport_Particles").GetComponent<ParticleSystem>();
+    }
+
     protected override void Move()
     {
         //base.Move();
-        teleportToPlayer();
+        teleportToRandomSpot();
     }
 
-    private void teleportToPlayer()
+    private void teleportToRandomSpot()
     {
         teleTimer += Time.deltaTime;
-        if(teleTimer > teleRate)
+        if(teleTimer > teleRate && !teleporting)
         {
-            transform.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0);
-            teleTimer = 0;
+            // transform.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0);
+            // teleTimer = 0;
+
+            StartCoroutine(teleport());
         }
     }
 
@@ -40,5 +54,24 @@ public class Teleporter : EnemyBase
             Instantiate(projectile, transform.position, Quaternion.identity);
             shootTimer = 0;
         }
+    }
+
+    IEnumerator teleport()
+    {
+        teleporting = true;
+        
+        Color spDefaultColor = sp.color;
+        Color transparent = new Color(0,0,0,0);
+
+        startTPParticles.Play();
+        yield return new WaitForSeconds(0.25f);
+        sp.color = transparent;
+        transform.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0);
+        yield return new WaitForSeconds(0.3f);
+        endTPParticles.Play();
+        sp.color = spDefaultColor;
+
+        teleTimer = 0;
+        teleporting = false;
     }
 }

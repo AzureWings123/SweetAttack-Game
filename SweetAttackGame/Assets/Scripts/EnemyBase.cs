@@ -7,12 +7,13 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] public string enemyName;
     [SerializeField] protected float moveSpeed; //changed from private
     protected Transform target; // Enemy target = player ***changed from private
-    private SpriteRenderer sp;
+    protected SpriteRenderer sp;
     Rigidbody2D rb;
     void Start()
     {
         sp = GetComponent<SpriteRenderer>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        Initialize();
     }
 
     // Update is called once per frame
@@ -21,6 +22,11 @@ public class EnemyBase : MonoBehaviour
         Move();
         facePlayer();
         Attack();
+    }
+
+    protected virtual void Initialize()
+    {
+
     }
 
     protected virtual void Move()
