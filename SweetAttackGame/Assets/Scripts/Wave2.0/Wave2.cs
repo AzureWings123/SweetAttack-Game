@@ -8,22 +8,22 @@ using UnityEngine.Events;
 public class Wave2
 {
     public string waveName;
-    public float spawnInterval;
+    // public float spawnInterval;
 
-    public EnemyAndAmount[] enemies;
+    public Group[] groups;
 
     public int totalNumberOfEnemies()
     {
         int output = 0;
-        foreach (EnemyAndAmount enemy in enemies)
+        foreach (Group group in groups)
         {
-            output += enemy.amount;
+            output += group.totalNumberOfEnemies();
         }
         return output;
     }
 
     public int numberOfGroupsOfEnemies()
     {
-        return enemies.Length;
+        return groups.Length;
     }
 }

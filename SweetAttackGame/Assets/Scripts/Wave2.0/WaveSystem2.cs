@@ -13,7 +13,7 @@ public class WaveSystem2 : MonoBehaviour
     private int currentWaveNumber;
     private float nextSpawnTime;
     private float spawnTimer;
-    private EnemyAndAmount currentGroup;
+    private Group currentGroup;
 
     private int currentGroupIndex;
 
@@ -29,7 +29,7 @@ public class WaveSystem2 : MonoBehaviour
         currentGroupIndex = 0;
         spawnTimer = 0.0f;
         nextSpawnTime = 0.0f;
-        currentGroup = new EnemyAndAmount();
+        currentGroup = new Group();
     }
 
     private void Update()
@@ -77,13 +77,19 @@ public class WaveSystem2 : MonoBehaviour
 
         if (canSpawn && nextSpawnTime <= spawnTimer)
         {
-            currentGroup =  currentWave.enemies[currentGroupIndex];
+            currentGroup =  currentWave.groups[currentGroupIndex];
 
-            for (int i = 0; i < currentGroup.amount; i++)
+            for (int i = 0; i < currentGroup.totalNumberOfUniqueEnemies(); i++)
             {
-                GameObject enemy = currentGroup.enemy;
-                Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-                Instantiate(enemy, randomPoint.position, Quaternion.identity);
+                // GameObject enemy = currentGroup.enemy;
+                // Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+                // Instantiate(enemy, randomPoint.position, Quaternion.identity);
+                for (int j = 0; j < currentGroup.enemies[i].amount; j++)
+                {
+                    GameObject enemy = currentGroup.enemies[i].enemy;
+                    Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+                    Instantiate(enemy, randomPoint.position, Quaternion.identity);
+                }
             }
 
             // GameObject randomEnemy = currentWave.enemyTypes[Random.Range(0, currentWave.enemyTypes.Length)]; //choose 

@@ -7,6 +7,6 @@ public class EnemyAndAmount
 {
     public GameObject enemy;
     public int amount;
-    public float delay;
-    public bool spawnNextInstantlayWhenAllDead = true;
+    // public float delay;
+    // public bool spawnNextInstantlayWhenAllDead = true;
 }
