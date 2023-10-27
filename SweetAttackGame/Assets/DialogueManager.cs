@@ -16,8 +16,16 @@ public class DialogueManager : MonoBehaviour
     int activeMessage = 0;
     public static bool isActive = false;
 
+    public Button startButton;
+
+    void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
+        gameObject.SetActive(true);
         currentMessages = messages;
         currentActors = actors;
         activeMessage = 0;
@@ -25,6 +33,9 @@ public class DialogueManager : MonoBehaviour
 
         Debug.Log("Started convo! Loaded messages: " + messages.Length);
         DisplayMessage();
+        
+
+        startButton.enabled = false;
     }
 
     public void DisplayMessage()
@@ -48,6 +59,7 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("Convo end");
             isActive = false;
+            gameObject.SetActive(false);
         }
     }
 
