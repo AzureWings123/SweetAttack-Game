@@ -15,6 +15,7 @@ TagManager:
   - FCost
   - ICost
   - LCost
+  - DTrigger
   layers:
   - Default
   - TransparentFX

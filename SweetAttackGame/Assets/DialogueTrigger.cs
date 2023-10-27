@@ -1,15 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class DialogueTrigger : MonoBehaviour
 {
     public Message[] messages;
     public Actor[] actors;
 
+    public GameObject messageWindow;
+    public GameObject startButton;
+
+
     public void StartDialogue()
     {
-      FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
+        messageWindow.SetActive(true);
+        startButton.GetComponentInChildren<TextMeshProUGUI>().text = " ";
+        FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
     }
 }
 
