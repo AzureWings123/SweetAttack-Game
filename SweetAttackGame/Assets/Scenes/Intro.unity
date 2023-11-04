@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.40396938, g: 0.42805365, b: 0.9622642, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -884,19 +884,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - actorID: 0
-    message: Hello How are you?
+  - actorID: 4
+    message: The day started off as normal as any other. With Kazuto rolling the
+      dough and Gran Ola, the bakery's owner, watching.
   - actorID: 1
-    message: Good thank you
+    message: Kazzy Dear, you've been doing superb, this dough is just divine!
   - actorID: 0
-    message: Thats good
+    message: Thanks Gran, guess I'm more awesome when I put my mind to it. *Laughs*
+  - actorID: 3
+    message: '*Thinking* Wish she''d call me Kazuto at this point...'
+  - actorID: 4
+    message: After a few minutes, Kazuto's attention slowly shifts away from the
+      dough to the calendar.
   - actorID: 0
-    message: Id better get going now
+    message: '*Thinking* Has it already been a month already? Just one more month
+      and I should be done with this community shtick.'
+  - actorID: 1
+    message: Is something the matter Dearie? You've stopped kneeding.
+  - actorID: 0
+    message: N-nothings the matter!
+  - actorID: 4
+    message: Kazuto returns to kneeding the dough with the rolling pin
+  - actorID: 2
+    message: '*Thinking* Would Gran really be ok if I asked to st-- '
   actors:
-  - name: Player
-    sprite: {fileID: 21300000, guid: ff00345da0563d641903c5bd5bb748a4, type: 3}
-  - name: Other
-    sprite: {fileID: 21300000, guid: dcea51d6065d64246aeec467afeff684, type: 3}
+  - name: Kazuto
+    sprite: {fileID: 485865664, guid: 2b223bff342f8b44ca9c7b1485b58be9, type: 3}
+  - name: Gran Ola
+    sprite: {fileID: 21300000, guid: 9aebd705574f9e642aef1e5f59b3e4d8, type: 3}
+  - name: Kazuto (Think)
+    sprite: {fileID: -1183398192, guid: 2b223bff342f8b44ca9c7b1485b58be9, type: 3}
+  - name: Kazuto (Half- Lidded)
+    sprite: {fileID: -1165381658, guid: 2b223bff342f8b44ca9c7b1485b58be9, type: 3}
+  - name: Narrator
+    sprite: {fileID: 21300000, guid: 91976e8b9ce0f0341838727acd55621c, type: 3}
   messageWindow: {fileID: 936113203}
   startButton: {fileID: 1748536056}
 --- !u!114 &1748536059
