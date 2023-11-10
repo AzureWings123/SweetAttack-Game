@@ -199,6 +199,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393876758}
   m_CullTransparentMesh: 1
+--- !u!1 &473837315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 473837318}
+  - component: {fileID: 473837317}
+  - component: {fileID: 473837316}
+  m_Layer: 9
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &473837316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473837315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &473837317
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473837315}
+  m_CullTransparentMesh: 1
+--- !u!224 &473837318
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473837315}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 562049596}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 6.4326, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &562049592
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +367,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 473837318}
   - {fileID: 936113204}
   - {fileID: 1748536057}
   m_Father: {fileID: 0}
@@ -336,7 +413,7 @@ RectTransform:
   - {fileID: 1307815313}
   - {fileID: 1770403170}
   m_Father: {fileID: 562049596}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -394,6 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actorImage: {fileID: 393876760}
+  backImage: {fileID: 473837316}
   actorName: {fileID: 1307815314}
   messageText: {fileID: 1770403171}
   backgroundBox: {fileID: 936113204}
@@ -864,7 +942,7 @@ RectTransform:
   m_Children:
   - {fileID: 1720292984}
   m_Father: {fileID: 562049596}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -887,39 +965,159 @@ MonoBehaviour:
   - actorID: 4
     message: The day started off as normal as any other. With Kazuto rolling the
       dough and Gran Ola, the bakery's owner, watching.
+    changeBkgd: 0
   - actorID: 1
     message: Kazzy Dear, you've been doing superb, this dough is just divine!
+    changeBkgd: 0
   - actorID: 0
     message: Thanks Gran, guess I'm more awesome when I put my mind to it. *Laughs*
+    changeBkgd: 0
   - actorID: 3
     message: '*Thinking* Wish she''d call me Kazuto at this point...'
+    changeBkgd: 1
   - actorID: 4
     message: After a few minutes, Kazuto's attention slowly shifts away from the
       dough to the calendar.
+    changeBkgd: 0
   - actorID: 0
     message: '*Thinking* Has it already been a month already? Just one more month
       and I should be done with this community shtick.'
+    changeBkgd: 0
   - actorID: 1
     message: Is something the matter Dearie? You've stopped kneeding.
+    changeBkgd: 0
   - actorID: 0
     message: N-nothings the matter!
+    changeBkgd: 1
   - actorID: 4
-    message: Kazuto returns to kneeding the dough with the rolling pin
+    message: Kazuto returns to kneeding the dough with the rolling pin.
+    changeBkgd: 0
   - actorID: 2
     message: '*Thinking* Would Gran really be ok if I asked to st-- '
+    changeBkgd: 0
+  - actorID: 6
+    message: AHHH! EEEK! SOMEONE HELP! MONSTERS!!
+    changeBkgd: 0
+  - actorID: 4
+    message: Both Kazuto and Gran Ola are shocked to hear the commotion.
+    changeBkgd: 0
+  - actorID: 4
+    message: 'Suddenly, a regular patron, Kazuto''s old friend, bursts into the bakery. '
+    changeBkgd: 1
+  - actorID: 5
+    message: Gran Ola! Kazuto! Bad news! Ya two better scramble and beat it like
+      eggs! M-monsters are destroying everything!
+    changeBkgd: 0
+  - actorID: 0
+    message: M-Monsters?!
+    changeBkgd: 0
+  - actorID: 1
+    message: '*Gasp*'
+    changeBkgd: 0
+  - actorID: 5
+    message: Yeah! It's less cool than fried ice! I gotta scram, gotta make sure
+      the others are safe! Remember to head to the shelter square!
+    changeBkgd: 0
+  - actorID: 4
+    message: They leave in a hurry.
+    changeBkgd: 0
+  - actorID: 1
+    message: Oh dearie, monsters... if they're a threat, then I'll show those whippersnappers
+      who's the cream of the crop here!
+    changeBkgd: 0
+  - actorID: 7
+    message: '*Crash!*'
+    changeBkgd: 0
+  - actorID: 8
+    message: '*Growls*'
+    changeBkgd: 0
+  - actorID: 0
+    message: AHHH!
+    changeBkgd: 0
+  - actorID: 4
+    message: After Kazuto dodges the monster's attack, Gran Ola brings out a wand
+      from underneath the sink.
+    changeBkgd: 0
+  - actorID: 4
+    message: She flicks the wand and flame bolts onto the monster. In a flash it
+      is defeated.
+    changeBkgd: 0
+  - actorID: 1
+    message: Monsters in the shape of pastries and goods. Now I've seen it all.
+    changeBkgd: 0
+  - actorID: 4
+    message: As Gran Ola heads to the door she suddenly collapses.
+    changeBkgd: 0
+  - actorID: 1
+    message: M-my hip!
+    changeBkgd: 0
+  - actorID: 0
+    message: Gran Ola!
+    changeBkgd: 0
+  - actorID: 7
+    message: AHH! HELP!!!
+    changeBkgd: 0
+  - actorID: 1
+    message: '*Pauses and stares at Kazuto*'
+    changeBkgd: 0
+  - actorID: 1
+    message: Kazuto Dearie, defend this town and its people. If they destroy this
+      bakery, this town, the people... I don't know what I'll do.
+    changeBkgd: 0
+  - actorID: 1
+    message: I know you've hadn't the best realtionship with some of the folks, but
+      there are good people in this town.
+    changeBkgd: 0
+  - actorID: 4
+    message: Kazuto nods with resolve as he accepts the wand.
+    changeBkgd: 0
+  - actorID: 0
+    message: I'll do it Gran! I might not be the most suited to protect this town,
+      but I'll do my best darn it!
+    changeBkgd: 0
+  - actorID: 2
+    message: '*Thinking* Just need to remember to keep movin''. WASD should do the
+      trick. Left click is how Gran did that fire move, and I can switch spells with
+      the space bar.'
+    changeBkgd: 0
+  - actorID: 2
+    message: '*Thinking* If she can take them down, so can I! I''ll protect this
+      town!'
+    changeBkgd: 0
+  - actorID: 0
+    message: Bring it, I'll turn you oversized pastries to crumbs!
+    changeBkgd: 0
   actors:
   - name: Kazuto
     sprite: {fileID: 485865664, guid: 2b223bff342f8b44ca9c7b1485b58be9, type: 3}
   - name: Gran Ola
     sprite: {fileID: 21300000, guid: 9aebd705574f9e642aef1e5f59b3e4d8, type: 3}
-  - name: Kazuto (Think)
+  - name: Kazuto
     sprite: {fileID: -1183398192, guid: 2b223bff342f8b44ca9c7b1485b58be9, type: 3}
-  - name: Kazuto (Half- Lidded)
+  - name: Kazuto
     sprite: {fileID: -1165381658, guid: 2b223bff342f8b44ca9c7b1485b58be9, type: 3}
   - name: Narrator
     sprite: {fileID: 21300000, guid: 91976e8b9ce0f0341838727acd55621c, type: 3}
+  - name: Patron
+    sprite: {fileID: 21300000, guid: 144aa74618b85974a9a50f612c2fa8fd, type: 3}
+  - name: Voices Outside
+    sprite: {fileID: 21300000, guid: c22340e383b54c44196cb7765328e79d, type: 3}
+  - name: ' '
+    sprite: {fileID: 0}
+  - name: Monster Cookie
+    sprite: {fileID: -3164590754534246491, guid: 94fd5f0e8bc6f8844b93bc36dfeab7d8, type: 3}
+  backgrounds:
+  - bkgdNum: 0
+    sprite: {fileID: 1539350817, guid: 77e8dd48b225cd94fa7f6d06719de163, type: 3}
+  - bkgdNum: 1
+    sprite: {fileID: -926481094, guid: a3d9a4fb9ef7e5c4688da5138ef85406, type: 3}
+  - bkgdNum: 2
+    sprite: {fileID: -755461521, guid: e9892d91e8358dc4c8dc75fef9f5934a, type: 3}
+  - bkgdNum: 3
+    sprite: {fileID: -34690715, guid: e36769e6150309a45816381a90df7f59, type: 3}
   messageWindow: {fileID: 936113203}
   startButton: {fileID: 1748536056}
+  backgroundWindow: {fileID: 473837315}
 --- !u!114 &1748536059
 MonoBehaviour:
   m_ObjectHideFlags: 0

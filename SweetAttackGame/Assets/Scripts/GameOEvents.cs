@@ -24,7 +24,7 @@ public class GameOEvents : MonoBehaviour
     public void StartGame() 
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Intro");
     }
 
      public void StartCredits() 
