@@ -16,6 +16,7 @@ TagManager:
   - ICost
   - LCost
   - DTrigger
+  - CutsceneSprites
   layers:
   - Default
   - TransparentFX
