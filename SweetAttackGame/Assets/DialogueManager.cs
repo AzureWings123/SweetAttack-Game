@@ -58,6 +58,7 @@ public class DialogueManager : MonoBehaviour
 
         Background backToDisplay = currentBackgrounds[backgroundNum];
         backImage.sprite = backToDisplay.sprite;
+
     }
 
     public void NextMessage()
