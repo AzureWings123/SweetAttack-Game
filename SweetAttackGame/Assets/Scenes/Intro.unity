@@ -5020,6 +5020,10 @@ MonoBehaviour:
       the space bar.'
     changeBkgd: 0
   - actorID: 2
+    message: '*Thinking* She also mentioned something about the spells reacting with
+      each other to do more damage...'
+    changeBkgd: 0
+  - actorID: 0
     message: '*Thinking* If she can take them down, so can I! I''ll protect this
       town!'
     changeBkgd: 1
@@ -5030,50 +5034,50 @@ MonoBehaviour:
   - name: Kazuto
     sprite: {fileID: 485865664, guid: 2b223bff342f8b44ca9c7b1485b58be9, type: 3}
   - name: Gran Ola
-    sprite: {fileID: 21300000, guid: 9aebd705574f9e642aef1e5f59b3e4d8, type: 3}
+    sprite: {fileID: 21300000, guid: afabe911326ff524f8458994b2c3bc76, type: 3}
   - name: Kazuto
     sprite: {fileID: -1183398192, guid: 2b223bff342f8b44ca9c7b1485b58be9, type: 3}
   - name: Kazuto
     sprite: {fileID: -1165381658, guid: 2b223bff342f8b44ca9c7b1485b58be9, type: 3}
   - name: Narrator
-    sprite: {fileID: 21300000, guid: 91976e8b9ce0f0341838727acd55621c, type: 3}
+    sprite: {fileID: 0}
   - name: Patron
-    sprite: {fileID: 21300000, guid: 144aa74618b85974a9a50f612c2fa8fd, type: 3}
+    sprite: {fileID: 0}
   - name: Voices Outside
-    sprite: {fileID: 21300000, guid: c22340e383b54c44196cb7765328e79d, type: 3}
+    sprite: {fileID: 0}
   - name: ' '
     sprite: {fileID: 0}
   - name: Monster Cookie
     sprite: {fileID: -3164590754534246491, guid: 94fd5f0e8bc6f8844b93bc36dfeab7d8, type: 3}
   backgrounds:
   - bkgdNum: 0
-    sprite: {fileID: 21300000, guid: 4815666cb219dba42878c443ea620733, type: 3}
+    sprite: {fileID: 21300000, guid: fd7276ab5798b174fa9a561436d00cc1, type: 3}
   - bkgdNum: 1
-    sprite: {fileID: 21300000, guid: 9082253e8851ce049a976fc0e386ba64, type: 3}
+    sprite: {fileID: 21300000, guid: 104e82f0ed2b88b4cb110161a13fbb43, type: 3}
   - bkgdNum: 2
-    sprite: {fileID: 21300000, guid: 8f4a442242f74bf4da7c0d1c243e4ff2, type: 3}
+    sprite: {fileID: 21300000, guid: c359fa81ecfdff2478541a24c9e902b9, type: 3}
   - bkgdNum: 3
-    sprite: {fileID: 21300000, guid: beaf818800140f84bb72dfc686c7766f, type: 3}
+    sprite: {fileID: 21300000, guid: d580a86a4e28e514da4e380daf0ed8d8, type: 3}
   - bkgdNum: 4
-    sprite: {fileID: 21300000, guid: d35922df9ed47e94cba4c7dcb573592d, type: 3}
+    sprite: {fileID: 21300000, guid: c43301e0d1a900548a505a72e38d61ef, type: 3}
   - bkgdNum: 5
-    sprite: {fileID: 21300000, guid: 6f21fd0baa943604fa1f53494dd4312c, type: 3}
+    sprite: {fileID: 21300000, guid: 1960fece5432d4d4b99ac2349bb8c870, type: 3}
   - bkgdNum: 6
-    sprite: {fileID: 21300000, guid: 664ac1a9e2fe403429d57027b2581306, type: 3}
+    sprite: {fileID: 21300000, guid: f8426b8d04834d34fbe65ae4d574d820, type: 3}
   - bkgdNum: 7
-    sprite: {fileID: 21300000, guid: b06c9024e2ddac34b8eaf51f0171471f, type: 3}
+    sprite: {fileID: 21300000, guid: 650b5501db35575419f5553a961c7d1b, type: 3}
   - bkgdNum: 8
-    sprite: {fileID: 21300000, guid: 50d94215cdd271c448a45a6ea401d670, type: 3}
+    sprite: {fileID: 21300000, guid: 4fc2a79e3f817744c8da5a645335c00d, type: 3}
   - bkgdNum: 9
-    sprite: {fileID: 21300000, guid: a4de03a18bf3de64697b0ce29390c62f, type: 3}
+    sprite: {fileID: 21300000, guid: 02ca012fea8c1144cbb7d8b47f9231e4, type: 3}
   - bkgdNum: 10
-    sprite: {fileID: 21300000, guid: cbfa3db4882148e4aa3e47d3a40908eb, type: 3}
+    sprite: {fileID: 21300000, guid: fb9f7ef382c654146b1d3fea638daa3e, type: 3}
   - bkgdNum: 11
-    sprite: {fileID: 21300000, guid: cbfa3db4882148e4aa3e47d3a40908eb, type: 3}
+    sprite: {fileID: 21300000, guid: fb9f7ef382c654146b1d3fea638daa3e, type: 3}
   - bkgdNum: 12
-    sprite: {fileID: 21300000, guid: b903c87d0aa4e5c45a93d61daf2d433e, type: 3}
+    sprite: {fileID: 21300000, guid: a92664a32e72c5a43adc53f7b04390d9, type: 3}
   - bkgdNum: 13
-    sprite: {fileID: 21300000, guid: 610b1964c3c55664fb61dc2f415b3498, type: 3}
+    sprite: {fileID: 21300000, guid: 3373c419130ce944b8c6372e56ebb2b3, type: 3}
   messageWindow: {fileID: 936113203}
   startButton: {fileID: 1748536056}
   backgroundWindow: {fileID: 473837315}
