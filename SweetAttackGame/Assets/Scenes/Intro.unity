@@ -5034,7 +5034,7 @@ MonoBehaviour:
   - name: Kazuto
     sprite: {fileID: 485865664, guid: 2b223bff342f8b44ca9c7b1485b58be9, type: 3}
   - name: Gran Ola
-    sprite: {fileID: 21300000, guid: afabe911326ff524f8458994b2c3bc76, type: 3}
+    sprite: {fileID: 21300000, guid: e8e8e3d2d0f31ae4a91603968cb9d0f3, type: 3}
   - name: Kazuto
     sprite: {fileID: -1183398192, guid: 2b223bff342f8b44ca9c7b1485b58be9, type: 3}
   - name: Kazuto
@@ -5050,34 +5050,20 @@ MonoBehaviour:
   - name: Monster Cookie
     sprite: {fileID: -3164590754534246491, guid: 94fd5f0e8bc6f8844b93bc36dfeab7d8, type: 3}
   backgrounds:
-  - bkgdNum: 0
-    sprite: {fileID: 21300000, guid: fd7276ab5798b174fa9a561436d00cc1, type: 3}
-  - bkgdNum: 1
-    sprite: {fileID: 21300000, guid: 104e82f0ed2b88b4cb110161a13fbb43, type: 3}
-  - bkgdNum: 2
-    sprite: {fileID: 21300000, guid: c359fa81ecfdff2478541a24c9e902b9, type: 3}
-  - bkgdNum: 3
-    sprite: {fileID: 21300000, guid: d580a86a4e28e514da4e380daf0ed8d8, type: 3}
-  - bkgdNum: 4
-    sprite: {fileID: 21300000, guid: c43301e0d1a900548a505a72e38d61ef, type: 3}
-  - bkgdNum: 5
-    sprite: {fileID: 21300000, guid: 1960fece5432d4d4b99ac2349bb8c870, type: 3}
-  - bkgdNum: 6
-    sprite: {fileID: 21300000, guid: f8426b8d04834d34fbe65ae4d574d820, type: 3}
-  - bkgdNum: 7
-    sprite: {fileID: 21300000, guid: 650b5501db35575419f5553a961c7d1b, type: 3}
-  - bkgdNum: 8
-    sprite: {fileID: 21300000, guid: 4fc2a79e3f817744c8da5a645335c00d, type: 3}
-  - bkgdNum: 9
-    sprite: {fileID: 21300000, guid: 02ca012fea8c1144cbb7d8b47f9231e4, type: 3}
-  - bkgdNum: 10
-    sprite: {fileID: 21300000, guid: fb9f7ef382c654146b1d3fea638daa3e, type: 3}
-  - bkgdNum: 11
-    sprite: {fileID: 21300000, guid: fb9f7ef382c654146b1d3fea638daa3e, type: 3}
-  - bkgdNum: 12
-    sprite: {fileID: 21300000, guid: a92664a32e72c5a43adc53f7b04390d9, type: 3}
-  - bkgdNum: 13
-    sprite: {fileID: 21300000, guid: 3373c419130ce944b8c6372e56ebb2b3, type: 3}
+  - sprite: {fileID: 21300000, guid: fd7276ab5798b174fa9a561436d00cc1, type: 3}
+  - sprite: {fileID: 21300000, guid: 104e82f0ed2b88b4cb110161a13fbb43, type: 3}
+  - sprite: {fileID: 21300000, guid: c359fa81ecfdff2478541a24c9e902b9, type: 3}
+  - sprite: {fileID: 21300000, guid: d580a86a4e28e514da4e380daf0ed8d8, type: 3}
+  - sprite: {fileID: 21300000, guid: c43301e0d1a900548a505a72e38d61ef, type: 3}
+  - sprite: {fileID: 21300000, guid: 1960fece5432d4d4b99ac2349bb8c870, type: 3}
+  - sprite: {fileID: 21300000, guid: f8426b8d04834d34fbe65ae4d574d820, type: 3}
+  - sprite: {fileID: 21300000, guid: 650b5501db35575419f5553a961c7d1b, type: 3}
+  - sprite: {fileID: 21300000, guid: 4fc2a79e3f817744c8da5a645335c00d, type: 3}
+  - sprite: {fileID: 21300000, guid: 02ca012fea8c1144cbb7d8b47f9231e4, type: 3}
+  - sprite: {fileID: 21300000, guid: fb9f7ef382c654146b1d3fea638daa3e, type: 3}
+  - sprite: {fileID: 21300000, guid: fb9f7ef382c654146b1d3fea638daa3e, type: 3}
+  - sprite: {fileID: 21300000, guid: a92664a32e72c5a43adc53f7b04390d9, type: 3}
+  - sprite: {fileID: 21300000, guid: 3373c419130ce944b8c6372e56ebb2b3, type: 3}
   messageWindow: {fileID: 936113203}
   startButton: {fileID: 1748536056}
   backgroundWindow: {fileID: 473837315}
