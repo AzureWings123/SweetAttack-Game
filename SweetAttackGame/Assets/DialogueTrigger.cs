@@ -42,6 +42,5 @@ public class Actor
 [System.Serializable]
 public class Background
 {
-    public int bkgdNum;
     public Sprite sprite;
 }

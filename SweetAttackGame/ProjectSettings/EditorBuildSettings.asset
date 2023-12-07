@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level5.unity
     guid: a0f36b20fb4a20349bf805c151674cd6
+  - enabled: 1
+    path: Assets/Scenes/PostBoss1_1.unity
+    guid: 605bb5ba2a3a0664798693208240cfe3
+  - enabled: 1
+    path: Assets/Scenes/PostBoss1_2.unity
+    guid: 95aa39a04015288479556484e491f73b
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
