@@ -3270,23 +3270,23 @@ MonoBehaviour:
     changeBkgd: 1
   - actorID: 0
     message: Any other pastry wan' a bite outta me?!
-    changeBkgd: 0
+    changeBkgd: 1
   - actorID: 1
     message: As Kazuto looks all around him, he doesn't see any more crazed pastries.
-    changeBkgd: 0
+    changeBkgd: 1
   - actorID: 0
     message: Yeah! That's what I thought!
-    changeBkgd: 0
+    changeBkgd: 1
   - actorID: 2
     message: Heh, phew...
     changeBkgd: 0
   - actorID: 2
     message: '*Thinking* Seriously, wassup with these monsters? After I burnt them
       to a crisp, they got small like a normal pastry should be.'
-    changeBkgd: 0
+    changeBkgd: 1
   - actorID: 0
     message: I wonder...
-    changeBkgd: 0
+    changeBkgd: 1
   - actorID: 1
     message: Kazuto picks one up and takes a bite.
     changeBkgd: 0
@@ -3298,7 +3298,7 @@ MonoBehaviour:
     changeBkgd: 0
   - actorID: 0
     message: Maybe Gran Ola--
-    changeBkgd: 0
+    changeBkgd: 1
   - actorID: 0
     message: GRAN OLA'S PROB AT TH' SQUARE! I gotta burn!
     changeBkgd: 0
@@ -3312,10 +3312,14 @@ MonoBehaviour:
   - name: Kazuto
     sprite: {fileID: -1165381658, guid: 2b223bff342f8b44ca9c7b1485b58be9, type: 3}
   backgrounds:
-  - bkgdNum: 0
-    sprite: {fileID: 21300000, guid: 010235603d2a3694c9eba32a48f479ed, type: 3}
-  - bkgdNum: 1
-    sprite: {fileID: 21300000, guid: fec9702b4174f7b4cb20336dc21893ff, type: 3}
+  - sprite: {fileID: 21300000, guid: 010235603d2a3694c9eba32a48f479ed, type: 3}
+  - sprite: {fileID: 21300000, guid: fec9702b4174f7b4cb20336dc21893ff, type: 3}
+  - sprite: {fileID: 21300000, guid: 5335e1e037f32ba4baed31aed4d83456, type: 3}
+  - sprite: {fileID: 21300000, guid: de20fcfe5b871ab4488127b23431f30f, type: 3}
+  - sprite: {fileID: 21300000, guid: ee3d9cc9547a64a428d2f5cec740e4fd, type: 3}
+  - sprite: {fileID: 21300000, guid: d318766f021d6f348835bca72a9abf11, type: 3}
+  - sprite: {fileID: 21300000, guid: 88eef5a39873fee4ab2db7bc3331022c, type: 3}
+  - sprite: {fileID: 21300000, guid: ef2f07ba4fcf917419f0a810442f6b18, type: 3}
   messageWindow: {fileID: 936113203}
   startButton: {fileID: 1748536056}
   backgroundWindow: {fileID: 473837315}
