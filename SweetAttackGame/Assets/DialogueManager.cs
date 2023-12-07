@@ -66,8 +66,9 @@ public class DialogueManager : MonoBehaviour
         activeMessage++;
         if (activeMessage < currentMessages.Length)
         {
-            DisplayMessage();
             ChangeBackground();
+            DisplayMessage();
+            
         }
         else
         {
