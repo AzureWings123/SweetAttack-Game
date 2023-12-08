@@ -58,6 +58,7 @@ public class StatusEffect : MonoBehaviour
             SoundManagerScript.instance.PlaySound(Burn);
         }
 
+
     }
 }
 
