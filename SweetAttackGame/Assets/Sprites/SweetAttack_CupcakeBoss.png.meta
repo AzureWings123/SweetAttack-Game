@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -110,8 +110,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 19
-        height: 40
+        width: 146
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 132176425669b37408caff899fd7cb05
-      internalID: 1539350817
+      spriteID: ad3eef6975be5894180941c299316070
+      internalID: -1256983527
       vertices: []
       indices: 
       edges: []
@@ -129,10 +129,10 @@ TextureImporter:
       name: SweetAttack_CupcakeBoss_1
       rect:
         serializedVersion: 2
-        x: 21
+        x: 162
         y: 0
-        width: 19
-        height: 40
+        width: 147
+        height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfad97cceab7eae4ab978eccd522af3d
-      internalID: 1503625504
+      spriteID: 578f1b61ae836764a9597989e86e38a5
+      internalID: 1207137039
       vertices: []
       indices: 
       edges: []
@@ -150,10 +150,10 @@ TextureImporter:
       name: SweetAttack_CupcakeBoss_2
       rect:
         serializedVersion: 2
-        x: 42
+        x: 326
         y: 0
-        width: 19
-        height: 40
+        width: 148
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b25f94fdb70a244ca1c5a96a9775780
-      internalID: -606491441
+      spriteID: 1d9cb6973e44cdc439196e56b9ce38aa
+      internalID: 2029330666
       vertices: []
       indices: 
       edges: []
@@ -171,10 +171,10 @@ TextureImporter:
       name: SweetAttack_CupcakeBoss_3
       rect:
         serializedVersion: 2
-        x: 63
+        x: 489
         y: 0
-        width: 19
-        height: 40
+        width: 148
+        height: 270
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2ab971137c5144478a599ecb81c73c1
-      internalID: -1068196903
+      spriteID: cbc8b5de878556349a9895df4384c93d
+      internalID: -1133215267
       vertices: []
       indices: 
       edges: []
@@ -192,10 +192,10 @@ TextureImporter:
       name: SweetAttack_CupcakeBoss_4
       rect:
         serializedVersion: 2
-        x: 85
+        x: 662
         y: 0
-        width: 19
-        height: 40
+        width: 147
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9f9faaf2b50fae4b8256e228d20712f
-      internalID: 1175616443
+      spriteID: 871fbb2bd85554743810e71ca99f7103
+      internalID: 1838152688
       vertices: []
       indices: 
       edges: []
@@ -213,10 +213,10 @@ TextureImporter:
       name: SweetAttack_CupcakeBoss_5
       rect:
         serializedVersion: 2
-        x: 109
+        x: 849
         y: 0
-        width: 19
-        height: 40
+        width: 151
+        height: 270
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08779013ddff83d4091072dc8e4d9a6e
-      internalID: -1400498691
+      spriteID: a9ece79ee56019440ab0c5ca75dc432f
+      internalID: 297260763
       vertices: []
       indices: 
       edges: []
@@ -241,12 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SweetAttack_CupcakeBoss_4: 1175616443
-      SweetAttack_CupcakeBoss_5: -1400498691
-      SweetAttack_CupcakeBoss_1: 1503625504
-      SweetAttack_CupcakeBoss_2: -606491441
-      SweetAttack_CupcakeBoss_3: -1068196903
-      SweetAttack_CupcakeBoss_0: 1539350817
+      SweetAttack_CupcakeBoss_4: 1838152688
+      SweetAttack_CupcakeBoss_5: 297260763
+      SweetAttack_CupcakeBoss_1: 1207137039
+      SweetAttack_CupcakeBoss_2: 2029330666
+      SweetAttack_CupcakeBoss_3: -1133215267
+      SweetAttack_CupcakeBoss_0: -1256983527
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
