@@ -8,6 +8,8 @@ public class SkillButton : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public AudioSource SoundPlayer;
+
     public void UpgradeFire()
     {
         if (PlayerPrefs.GetInt("FireCost") <= PlayerPrefs.GetInt("SkillPoints"))
@@ -22,6 +24,7 @@ public class SkillButton : MonoBehaviour
             fLevel++;
             PlayerPrefs.SetInt("FireLevel", fLevel);
             print(PlayerPrefs.GetInt("FireLevel"));
+            playSound();
         }
     }
     public void UpgradeIce()
@@ -38,6 +41,7 @@ public class SkillButton : MonoBehaviour
             iLevel++;
             PlayerPrefs.SetInt("IceLevel", iLevel);
             print(PlayerPrefs.GetInt("IceLevel"));
+            playSound();
         }
     
     }
@@ -55,6 +59,7 @@ public class SkillButton : MonoBehaviour
             lLevel++;
             PlayerPrefs.SetInt("ElecLevel", lLevel);
             print(PlayerPrefs.GetInt("ElecLevel"));
+            playSound();
         }
        
     }
@@ -70,5 +75,10 @@ public class SkillButton : MonoBehaviour
             SceneManager.LoadScene(PlayerPrefs.GetInt("NextLevel"));
         }
         
+    }
+
+    public void playSound()
+    {
+        SoundPlayer.Play();
     }
 }

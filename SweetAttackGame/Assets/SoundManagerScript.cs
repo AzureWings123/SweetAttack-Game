@@ -26,6 +26,11 @@ public class SoundManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void Stop()
+    {
+        source.Stop();
     }
 }
