@@ -6,39 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MenuScene.unity
+    path: Assets/Background/Scenes/MenuScene.unity
     guid: 326f84a9cd1505e448a90aee7721ca69
   - enabled: 1
-    path: Assets/Scenes/Intro.unity
+    path: Assets/Background/Scenes/Intro.unity
     guid: db2bbfaede285554ba63e3a5ce19d73f
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Background/Scenes/Level1.unity
     guid: ea07bfd3d48dfa84d8dd23d1e920281e
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Background/Scenes/Level2.unity
     guid: 134de566507aae7429ca7d40b1b243ed
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
+    path: Assets/Background/Scenes/Level3.unity
     guid: fbba0a735e7dcf0438c75cc2587d055d
   - enabled: 1
-    path: Assets/Scenes/Level4.unity
+    path: Assets/Background/Scenes/Level4.unity
     guid: ad2df74ea33fe454c87bc62271cb1bf5
   - enabled: 1
-    path: Assets/Scenes/Level5.unity
+    path: Assets/Background/Scenes/Level5.unity
     guid: a0f36b20fb4a20349bf805c151674cd6
   - enabled: 1
-    path: Assets/Scenes/PostBoss1_1.unity
+    path: Assets/Background/Scenes/PostBoss1_1.unity
     guid: 605bb5ba2a3a0664798693208240cfe3
   - enabled: 1
-    path: Assets/Scenes/PostBoss1_2.unity
+    path: Assets/Background/Scenes/PostBoss1_2.unity
     guid: 95aa39a04015288479556484e491f73b
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/CreditScene.unity
+    path: Assets/Background/Scenes/CreditScene.unity
     guid: c19119e083799884f845e3b5b784f6c5
   - enabled: 1
-    path: Assets/Scenes/UpgradeMenu.unity
+    path: Assets/Background/Scenes/UpgradeMenu.unity
     guid: c9a0e1bf756aa4e4cb4e16b643123fd3
   m_configObjects: {}
