@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public float currentHealth { get; set; }
     [SerializeField] private AudioClip GOSFX;
 
+    
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -28,6 +29,7 @@ public class Health : MonoBehaviour
             }
             else if (gameObject.tag == "Player")
             {
+                SoundManagerScript.instance.Stop();
                 SoundManagerScript.instance.PlaySound(GOSFX);
             }
 
