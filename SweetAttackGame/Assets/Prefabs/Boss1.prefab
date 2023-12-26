@@ -418,9 +418,9 @@ GameObject:
   - component: {fileID: 5913159922106526519}
   - component: {fileID: 5913159922106526514}
   - component: {fileID: 5913159922106526513}
-  - component: {fileID: 5913159922106526515}
   - component: {fileID: 5913159922106526524}
   - component: {fileID: 3758383877101933664}
+  - component: {fileID: 914136816126239725}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Enemy
@@ -541,25 +541,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5913159922106526515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5913159922106526518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd4d7e16ddaa596479e45662d38efbc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyName: Basic
-  moveSpeed: 2
-  projectile: {fileID: 1407614732150506716, guid: 86ccbfd86de8ae54eb6f10e27610cbf8, type: 3}
-  minX: -9.78
-  maxX: 10.03
-  minY: -4.9
-  maxY: 5.01
 --- !u!114 &5913159922106526524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9bd04197fdbac4a8c92ceb0a588385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 80
+  startingHealth: 150
   GOSFX: {fileID: 0}
 --- !u!114 &3758383877101933664
 MonoBehaviour:
@@ -595,6 +576,22 @@ MonoBehaviour:
   Burn: {fileID: 8300000, guid: f65a234573742ba43bafdbf5bcbe00a8, type: 3}
   Chill: {fileID: 8300000, guid: 6b2c0a3b752d54f42a816feb13e892b5, type: 3}
   Shock: {fileID: 8300000, guid: 46ff6b852c6e7c04193c9ac2029393a2, type: 3}
+--- !u!114 &914136816126239725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5913159922106526518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2860c8b0043b8624b8773e9992b73a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyName: Cupcake
+  moveSpeed: 2
+  regProjectile: {fileID: 1407614732150506716, guid: 86ccbfd86de8ae54eb6f10e27610cbf8, type: 3}
+  homProjectile: {fileID: 5295566502190454959, guid: 56d1078392698bc4390b49e93b192245, type: 3}
 --- !u!1 &6060450675614178747
 GameObject:
   m_ObjectHideFlags: 0

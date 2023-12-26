@@ -7,13 +7,15 @@ public class Boss1 : EnemyBase
 
     private float shootRate = 3.0f;
     private float shootTimer;
+    private float attackChoice;
 
-    public GameObject projectile;
-    public AudioSource SoundPlayer;
+    public GameObject regProjectile;
+    public GameObject homProjectile;
+    //public AudioSource SoundPlayer;
 
     private void Awake()
     {
-        SoundPlayer.Play();
+       // SoundPlayer.Play();
     }
     protected override void Attack()
     {
@@ -21,21 +23,35 @@ public class Boss1 : EnemyBase
         shootTimer += Time.deltaTime;
         if (shootTimer > shootRate)
         {
-            for(int i = 0; i < 2; i++)
+            var attackChoice = Random.Range(0, 3);
+            if (attackChoice < 1)
             {
-                
-                StartCoroutine(MyCoroutine());
+                StartCoroutine(homingCoroutine());
+            }
+            else
+            {
+                StartCoroutine(normalCoroutine());
             }
             shootTimer = 0;
         }
     }
 
-    IEnumerator MyCoroutine()
+    IEnumerator homingCoroutine()
     {
-        //Debug.Log(Time.time);
-        yield return new WaitForSeconds(.5f);
-        Instantiate(projectile, transform.position, Quaternion.identity);
-        //Debug.Log(Time.time);
+        yield return new WaitForSecondsRealtime(.3f);
+        Instantiate(homProjectile, transform.position, Quaternion.identity);
+        yield return new WaitForSecondsRealtime(.3f);
+        Instantiate(homProjectile, transform.position, Quaternion.identity);
+        yield return new WaitForSecondsRealtime(.3f);
+        Instantiate(homProjectile, transform.position, Quaternion.identity);
     }
-
+    IEnumerator normalCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(.2f);
+        Instantiate(regProjectile, transform.position, Quaternion.identity);
+        yield return new WaitForSecondsRealtime(.2f);
+        Instantiate(homProjectile, transform.position, Quaternion.identity);
+        yield return new WaitForSecondsRealtime(.2f);
+        Instantiate(homProjectile, transform.position, Quaternion.identity);
+    }
 }
